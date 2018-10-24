@@ -27,16 +27,13 @@ def equation_of_state(T, V):
     V_c = 0.089  # l/mol,
     T_c = 126    # K
 
-    #T = T/T_c
-    #V = V/V_c
-
     b = k*T_c/(8*P_c)
     a = P_c*27*b**2
     N = V_c/(3*b)
 
     return (N*k*T/(V-N*b) - a*N*N/(V*V))/P_c
 
-"""
+
 V_c = 0.089 # l/mol,
 datapoints = int(1e5)
 T = np.array([77, 100, 110, 115, 120, 125])
@@ -49,12 +46,10 @@ for i in T:
 plt.xlabel(r"Relative Volume $[\frac{V}{V_C}]$")
 plt.ylabel(r"Relative Pressure $[\frac{P}{P_C}]$")
 plt.axis([min(V/V_c), 4, -3, 5])
-#plt.legend(loc='lower center', bbox_to_anchor=(0.5, 1.05),
-#          ncol=3, fancybox=True, shadow=True)
 plt.legend(loc="best", fontsize=12)
 plt.savefig("figures/equation_of_state.pdf", bbox_inches="tight")
 plt.show()
-"""
+
 
 V_c = 0.089 # l/mol,
 datapoints = int(1e5)
@@ -78,7 +73,7 @@ dic["77"]  = np.linspace(-2.5, 0.5, 100)
 minimal_area_diff = 1e5
 best_index = np.zeros(3, dtype=int)
 counter = 0
-
+colours = ["blue", "red", "blue", "green", "orange", "black"]
 for i in T:
     P = equation_of_state(i, V)
     plt.plot(V/V_c, P, label=r"$T=%3.0f$" % i)
@@ -109,26 +104,28 @@ for i in T:
                 V_g[counter] = V[indicies_MW[0]]/V_c
                 V_l[counter] = V[indicies_MW[1]]/V_c
 
-    plt.fill_between(V[best_index[0]:best_index[1]]/V_c, P[best_index[0]:best_index[1]], best_test_value* np.ones(best_index[1]-best_index[0]), alpha=0.25)
+    plt.fill_between(V[best_index[0]:best_index[1]]/V_c, P[best_index[0]:best_index[1]], best_test_value* np.ones(best_index[1]-best_index[0]), alpha=0.25, color=colours[counter])
 
-    plt.fill_between(V[best_index[1]:best_index[2]]/V_c, P[best_index[1]:best_index[2]], best_test_value* np.ones(best_index[2]-best_index[1]), alpha=0.25)
+    plt.fill_between(V[best_index[1]:best_index[2]]/V_c, P[best_index[1]:best_index[2]], best_test_value* np.ones(best_index[2]-best_index[1]), alpha=0.25, color=colours[counter])
 
     plt.xlabel(r"Relative Volume $[\frac{V}{V_C}]$")
     plt.ylabel(r"Relative Pressure $[\frac{P}{P_C}]$")
 
     counter += 1
-plt.axis([min(V/V_c), 4, -2.8, 1])
-plt.legend(loc='lower center', bbox_to_anchor=(0.5, 1.05),
-          ncol=3, fancybox=True, shadow=True)
-#plt.legend(loc="best", fontsize=12)
-#plt.savefig("figures/equation_of_state.pdf", bbox_inches="tight")
+plt.axis([min(V/V_c), 7.5, -2.5, 1])
+
+plt.legend(loc="best", fontsize=12)
+plt.savefig("figures/equation_of_state_area.pdf", bbox_inches="tight")
 plt.show()
 
 longer_T = np.linspace(75, 140, int(1e3))
-
 m, c, delta_m, delta_c = linear_regresion(T, V_l-V_g)
-plt.plot(T, V_l-V_g, "o")
-plt.plot(longer_T, m*longer_T+c)
+plt.plot(T, V_l-V_g, "o", label="data points")
+plt.plot(longer_T, m*longer_T+c, "--", label="best fit")
 
-print(-c/m)
+plt.xlabel("Temperature [K]")
+plt.ylabel(r"Difference in liquid and gas volume $V_l-V_g$ [$V_c$]")
+print(-c/m, "intersection with V=0")
+print(-c/m*np.sqrt((delta_m/m)**2 + (delta_c/c)**2), "uncertainty")
+plt.savefig("lin_reg.pdf")
 plt.show()

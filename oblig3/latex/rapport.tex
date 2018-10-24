@@ -148,13 +148,14 @@ With the equation of state we can find an expression for the work done on the ga
       &= -NkT\Bigg[\ln{V-Nb}\Bigg]_{V_1}^{V_2}-aN^2\Bigg[\frac{1}{V}\Bigg]_{V_1}^{V_2} \\
       &= NkT\ln{\left(\frac{V_1-Nb}{V_2-Nb}\right)}+aN^2\left(\frac{1}{V_1}-\frac{1}{V_2}\right)
 \end{align*}
-We want to comare this work to the work needed to compress an ideal gass the same amount, which is given by
+We want to compare this work to the work needed to compress an ideal gas the same amount, which is given by
 \begin{equation}
     W_{ideal} = NkT\ln{\left(\frac{V_1}{V_2}\right)}.
 \end{equation}
-We see that if both $a$ and $b$ are zero, the work done is the same for the van der Waals equation and the ideal gas. In the low density limit, where $N$ is large and $V_1$ and $V_2$ is small.
+We see that if both $a$ and $b$ are zero, the work done is the same for the van der Waals equation and the ideal gas. In the low density limit, where $N$ is large and $V_1$ and $V_2$ is small, the work needed to do for the van der Waals gas larger. This is due to the denominator within the logarithm going towards zero faster than for the ideal gas, as well as the term which goes as $N^2$ making it even harder. This is due to the van der Waal equation taking into account that we can not compress a gas to an infinitely small volume, and the term $-Nb$ is making sure of it. While the ideal gas does not include particle-particle interactions, and is therefore not effected directly by the gas being more dense. \\
+For the low density limit, where $N$ is small and $V$ is large the van der Waals term of $aN^2(1/V_1-1/V_2)$ is negligible. In addition the term $-Nb$ will also be nnegligiblecompared to $V_1$ and $V_2$. This means that the van der Waals equation is approximately equal to the ideal gas case. We will therefore get the same work done for both van der Waals equation and ideal gas.
 \subsection*{1.3}
-We will now use the equation of state to plot the equation of state for different temperatures
+We will now use the equation of state to plot the relationship between pressure and volume for different temperatures
 \begin{equation}
     T = \{70, 100, 110, 115, 120, 125\}\text{K}. \label{temps}
 \end{equation}
@@ -164,8 +165,7 @@ The equation will be dimensionless through the critical values
     V_c &= 0.089 \text{ l/mol} \\
     T_c &= 126 \text{ K},
 \end{align*}
-where we get $t=T/T_c$, $p=P/P_c$ and $v=V/V_c$.
-We can also use the critical values to find an expression for $a$ and $b$ through the following equations
+We use the critical values to find an expression for $a$ and $b$ and $N$ through the following equations
 \begin{align*}
     P_c &= \frac{a}{27b^2}  \\
     V_c &= 3Nb \\
@@ -174,17 +174,60 @@ We can also use the critical values to find an expression for $a$ and $b$ throug
 which can be derived by studying at first and second derivatives of the equation of state, and find for what values the derivative is equal to zero. The equations above can be combined to find
 \begin{align*}
     b &= \frac{kT_c}{8P_c} \\
-    a &= 27P_c\left(\frac{kT_c}{8P_c}\right)^2
+    a &= 27P_c\left(\frac{kT_c}{8P_c}\right)^2 \\
+    N &= \frac{8P_cV_c}{3kT_c}
 \end{align*}
-In figure \vref{fig:13} we see the pressure as a function of volume for the temperatures given in \eqref{temps}. Where we have used the critical values of pressure, volume and temperature to scale the expression, as well as finding the values of $a$ and $b$. The code to creates this figure is shown in listing \vref{program1}.
+By using these expressions for $a$, $b$ and $N$, we have all the unknowns for our system, and plugging them into equation van der Waals equation makes the equation dimensionless.
+In figure \vref{fig:13} we see the pressure as a function of volume for the temperatures given in \eqref{temps}. Where we have used the critical values of pressure, volume and temperature to scale the equation. The code to creates this figure is shown in listing \vref{program1}.
 
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=0.8\textwidth]{equation_of_state.pdf}
-    \caption{Relative pressure as a function of relative volume for different temperatures derived analytically from the van der Waals equation.}
+    \includegraphics[width=0.8\textwidth]{../figures/equation_of_state.pdf}
+    \caption{Relative pressure as a function of relative volume for different temperatures derived analytically from the van der Waals equation. The unit of the temperatures in the legend is kelvin.}
     \label{fig:13}
 \end{figure}
+In this figure we can see that we observe negative pressure, how is this physically possible? \\For large volumes an increase in volume does not effect the pressure by any measurable amount. This is the behaviour of a gas. For small volumes on the other hand, a small increase in volume results in a huge change in pressure. This is the behaviour of a liquid. This means that for the right side of the graph shown in figure \vref{fig:13} we have a gas, and on the left side we have a liquid. The figure therefore shows us the transition from gas to liquid. The phase transition is the reason for the negative pressure. During the phase transition the change in volume will not change the pressure, but rather help with the phase transition from gas to liquid. The \textit{true} graph would look more like what we observe for the ideal gas, $1/V$. The negative pressure is therefore not what we would observe in an experiment, where the pressure would stay fixed during the phase transition, and after the phase transition we would then observe a large change when we try to compress the volume. We will study this closer in the next problem.
+\subsection*{1.4}
+We want to use the Maxwell construction for equal area to determine the liquid volume $V_l$ and gas volume $V_g$ for a given temperature. To find the area under the graph we write an algorithm. The algorithm loops over different values of the pressure, and find the corresponding volume values which the pressure intersects the P-V graph. We then use the trapezoidal method to calculate the area under the graph. We calculate the difference in area, and for each temperature we find the pressure value which results in the smallest difference in area. This area is plotted for all temperatures in figure \vref{fig:14}.
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.8\textwidth]{../figures/equation_of_state_area.pdf}
+    \caption{The Maxwell relation used for different temperatures of the wan der Waal equation of state, where the highlighted areas are the areas calculated by the trapezoidal method.}
+    \label{fig:14}
+\end{figure}
 
+Using this method we can find the values for $V_g$ and $V_l$ for different temperatures. The value for $V_l$ is the volume value of where the integral starts, and $V_g$ is the value of the volume where at the first intersection between the graph and the integral. The values we found for each temperature is shown in table \vref{table_4}.\\
+The code to creates this figure is shown in listing \vref{program1}.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\begin{center}
+\caption{Gas volume and liquid volume found by using Maxwell relation on the data showed in figure \vref{fig:14}}
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+Temperature {[}K{]} & $77$ & $100$ & $110$ & $115$ & $120$ & $125$ \\ \midrule
+$V_l$ {[}$V_c${]}    & 1.58 & 1.21  & 1.12  & 1.08  & 1.04  & 0.97  \\
+$V_g$ {[}$V_c${]}    & 0.44 & 0.51  & 0.57  & 0.62  & 0.69  & 0.86  \\ \bottomrule
+\end{tabular}
+\label{table_4}
+\end{center}
+
+\end{table}
+
+\subsection*{1.5}
+For the critical temperature the difference in liquid volume and gas volume, $V_l-V_g$, is zero. We can therefore use the data shown in table \vref{table_4} to estimate the critical temperature $T_c=127$K. By plotting the data shown in table \vref{table_4} we produce the graph shown in figure \vref{fig:15}.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.8\textwidth]{../figures/lin_reg.pdf}
+    \caption{The difference in gas and liquid volume as a function of temperature. The values used are the as the ones given in table \vref{table_4}. From the linear regression we can calculate for what $T$ value we have $V_g=V_l$.}
+    \label{fig:15}
+\end{figure}
+
+The code to creates this figure is shown in listing \vref{program1}.
+From this data we calculate the critical temperature $T_c$ by finding the intersection between the linear regression and $V_l-V_g=0$.
+With this method we find the critical temperature to be $135\pm13$K, while the true value is $127$K. Where we have calculated the uncertainty from the uncertainty in the constant term and the slop of the linear regression. The true value is within the uncertainty of our result, but there is quite a large difference. This is most likely from the uncertainty in the position of $V_l$ and $V_g$, as well as the fact that van der Waal's equation is not exact.
 \section*{Problem 2 - The Partition Function}
 We have a particle which can only have five states, with energies
 \begin{equation}
@@ -198,7 +241,7 @@ We have all the information to find the partition function $Z$ for our system
     Z &= \sum_{i=1}^{5} e^{-\epsilon_i/kT} = 55.95 \label{party}
 \end{align}
 \subsection*{2.2}
-With the partition function we can calcualte the probability of measuring the particle in each energy state is calculated by
+With the partition function we can calculate the probability of measuring the particle in each energy state
 \begin{equation}
     P_i = \frac{1}{Z}e^{-\epsilon_i/kT}.\label{probi}
 \end{equation}
@@ -215,8 +258,8 @@ This gives us the probabilities shown in table \vref{table_1}.
     \label{table_1}
     \end{center}
 \end{table}
-\subsection*{1.3}
-We have, as we are allowed to do, parallel shift the energies to
+\subsection*{2.3}
+We can, as we are allowed to do, parallel shift the energies to
 \begin{equation}
     \epsilon_i = \{0, 0.05, 0.1, 0.15, 0.2\} \text{eV}, \label{energy_2}
 \end{equation}
@@ -235,15 +278,13 @@ Using equation \eqref{probi} gives us the probabilities shown in table \vref{tab
     \end{center}
 \end{table}
 By comparing the values in table \vref{table_1}
-and \vref{table_2} we see that even though the energies are parallel shifted the probabilities are the same. The probabilities are still conserved, since the values of the partition function changed. This is the only physically acceptable outcome, since we are not changing the system by parallel shifting the energies, the probabilities should not change either.
-
-
+and table \vref{table_2} we see that even though the energies are parallel shifted the probabilities are the same. The probabilities are still conserved, since the values of the partition function changed. This is the only physically acceptable outcome, since we are not changing the system by parallel shifting the energies, the probabilities should not change either. \newpage
 \section*{Problem 3 - Maxwell-Boltzmann Distribution}
 The Maxwell-Boltzmann distribution is given as
 \begin{equation}
     D(v) = \left(\frac{m}{2\pi kT}\right)^{\frac{3}{2}}4\pi v^2e^{-\frac{mv^2}{2kT}}.
 \end{equation}
-The numerical integration and plotting of figures was done by the code given in listing \vref{program3}.
+All the numerical integration and plotting of figures in this problem was done by the code given in listing \vref{program3}.
 \subsection*{3.1}
 To find the most probable velocity we derivate the distribution with respect to velocity, and set it equal to zero.
 \begin{align*}
@@ -318,28 +359,28 @@ We have now found an expression for $\langle v \rangle$, $v_{rms}$ and $v_p$, we
 The distribution for the temperature $300$K and $600$K is plotted in figure \vref{fig:maxwell_dist}. Where we can see that increasing the temperature makes the value of the most probable velocity larger, as well as increasing the spread in probabilities.
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=0.8\textwidth]{MaxwellDistribution.pdf}
+    \includegraphics[width=0.8\textwidth]{../figures/MaxwellDistribution.pdf}
     \caption{Probability distribution as a function of velocity of temperatures of $300$K and $600$k}
     \label{fig:maxwell_dist}
 \end{figure}
 
 \subsection*{3.3}
-We want to find the probability of of measuring an $N_2$ molecule with a speed less than $300$m/s at a temperature of $300$K. Since the integral of the Maxwell-Boltzmann distribution does not have an analytical solution with limits (except when integrating from $0$ to $\infty$). We will therefore use numerical integration in python. We find that the probability of measuring a velocity less than $300$m/s is $20.13$\%.
+We want to find the probability of of measuring an $N_2$ molecule with a speed less than $300$m/s at a temperature of $300$K. Since the integral of the Maxwell-Boltzmann distribution does not have an analytical solution with limits (except when integrating from $0$ to $\infty$), we will have to use numerical integration. We find that the probability of measuring a velocity less than $300$m/s is $20.13$\%.
 
 \subsection*{3.4}
 The temperature of Earth's atmosphere is $1000$K. The escape velocity of a particle in the atmosphere of the earth is $11 000$m/s. We want to find a probability of measuring a nitrogen particle with a velocity of more than $11000$m/s. We again calculate the integral numerically to find the probability to be $4.75\times 10^{-86}$. This probability is effectively zero, and is the reason for why the Earth has an atmosphere, since the particles are not energetic enough to escape.
 
 \subsection*{3.5}
-We now repeat the calculation, bun now with Hydrogen (with a mass of $0.002$kg/mol) and Helium (with a mass of $0.004$kg/mol). We then find the respective probabilities: $2.1\times 10^{-4}$\%, $1.39\times 10^{-10}$\%.
+We now repeat the calculation, but now with Hydrogen (with a mass of $0.002$kg/mol) and Helium (with a mass of $0.004$kg/mol). We then find the respective probabilities: $2.1\times 10^{-4}$\%, $1.39\times 10^{-10}$\%. From this result we would assume that we have less hydrogen than helium in our atmosphere. On wikipedia we find that the amount of helium in our atmosphere is $0.000524\%$ and hydrogen is $0.000053\%$. This result seems reasonable when we compare to the values we found. We have also assumed that the escape velocity of a particle on earth is $11000$m/s for all heights, which is not true, and we should expect some deviation.
 
 \subsection*{3.6}
-We now do the same calculation for the moon, where the escape velocity is $2400$m/s, and again assume a temperature of $1000$K. We again calculate the probability of observing a nitrogen molecule with a velocity larger than the escape velocity to be  $0.0225$\%.
-
+We now do the same calculation for the moon, where the escape velocity is $2400$m/s, and again assume a temperature of $1000$K. We again calculate the probability of observing a nitrogen molecule with a velocity larger than the escape velocity to be  $0.0225$\%. This is a lot more likely compared to what we found for the Earth. We can therefore conclude that the moon should not have an atmosphere, at least not one with a temperature of $1000$K, since the particles would escape the gravitational pull.
+\newpage
 \section*{Code Appendix}
 \subsection*{Code For Problem 1}
-\lstinputlisting[label=program1,caption=Python code used to solve problem 1. And plotting the result.,language=python]{problem1_3.py}
+\lstinputlisting[label=program1,caption=Python code used to solve problem 1. And plotting the result.,language=python]{../problem1_3.py}
 \subsection*{Code For Problem 2}
-\lstinputlisting[label=program2,caption=Python code used to solve problem 2. And plotting the result.,language=python]{problem2_1.py}
-\subsection*{Code For Problem 2}
-\lstinputlisting[label=program3,caption=Python code used to solve problem 3. And plotting the result.,language=python]{problem3_2.py}
+\lstinputlisting[label=program2,caption=Python code used to solve problem 2. And plotting the result.,language=python]{../problem2_1.py}
+\subsection*{Code For Problem 3}
+\lstinputlisting[label=program3,caption=Python code used to solve problem 3. And plotting the result.,language=python]{../problem3_2.py}
 \end{document}
