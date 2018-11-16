@@ -9,39 +9,11 @@
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{bm}
+\usepackage{gensymb}
+
 \usepackage{physics}
 \usepackage{tikz}
 \usepackage{pgfplots}
-
-\newcommand{\EQU}[1] { \begin{equation*} \begin{split}
-#1
-\end{split} \end{equation*} }
- \newcommand{\DE}[1] {  \begin{description}  #1 \end{description} }
- \newcommand{\IT}[2] { \item[\color{blue} #1]{#2} }
- \newcommand{\vv}[1] { \mathbf{#1} }
- \newcommand{\PAR}[2]{ \frac{\partial #1}{\partial #2}}
- \newcommand{\expe}[1] { \left\langle#1\right\rangle }
- \newcommand{\ket}[1] { |#1\rangle }
-  \newcommand{\bra}[1] { \langle #1 | }
-  \newcommand{\braket}[2] { \langle #1 | #2 \rangle }
-  \newcommand{\commutator}[2]{ \left[ #1 , #2\right] }
-  \newcommand{\colvec}[2] {
-  \left( \begin{matrix}
- #1 \\
- #2 \\
-  \end{matrix}\right) }
- \newcommand{\PLOTS}[4]{
-\begin{tikzpicture}
-\begin{axis}[
-    axis lines = #3, %usally left
-    xlabel = #1,
-    ylabel = #2,
-]
-#4
-\end{axis}
-\end{tikzpicture}
-}
-
 
 \newcommand{\addPLOT}[4]{
 \addplot [domain=#1:#2,samples=200,color=#3,]{#4};}
@@ -103,6 +75,8 @@ Absolute zero: $0$K $=-273.15\degree C$.
   \pdv{S_A}{N_A} = \pdv{S_B}{N_B} \qquad (\text{at equillibrium}) \\
   \mbox{d}U = T\mbox{d}S - P\mbox{d}V \\
   \mbox{d}U = T\mbox{d}S - P\mbox{d}V  + \mu \mbox{d}N\\
+  \pdv{F}{N} = \mu \\
+  C_P = \left(\pdv{H}{T}\right)_P
 \end{align*}
 
 \subsubsection*{\scriptsize Important facts}
@@ -122,10 +96,12 @@ For indistinhuishable particles (we get $1/N!$)
 
 
 \subsection*{\footnotesize  Equipartition theorem}
-For each quadratic degree of freedom (kinetic $v^2$, spring $k^2$, rotational $\omega^2$, etc.) contributes to $1/2kT$ to the average energy at equillibrium at temperature $T$. For $N$ particles with $f$ degrees of freedom $U = NfkT/2$. Safest to apply in changes of energy. Coutning $f$: one for each dimension, $2$ from rotation (as one axis is symmetric), vibrateing counts twice (frozen out at room temperature) in a solid $3$ vibrational directions $f+=6$. Equipartition theorem only works for kinetic energy in liquids. Use $f=3$ for a monatmoic gas and $f=5$ for a diatomic gas.
-
-Derived by Boltzmannfactors $e^{-a\beta x^2}/Z$ and computing average of energy.
-
+For each quadratic degree of freedom (kinetic $v^2$, spring $k^2$, rotational $\omega^2$, etc.) contributes to $1/2kT$ to the average energy at equillibrium at temperature $T$. For $N$ particles with $f$ degrees of freedom $U = NfkT/2$. Safest to apply in changes of energy. Coutning $f$: one for each dimension, $2$ from rotation (as one axis is symmetric), vibrateing counts twice (frozen out at room temperature) in a solid $3$ vibrational directions $f+=6$. Equipartition theorem only works for kinetic energy in liquids. Use $f=3$ for a monatmoic gas and $f=5$ for a diatomic gas.\\
+Derived by Boltzmannfactors and converting to integral
+\begin{equation*}
+    Z = \frac{1}{\Delta q}\sum_q e^{-\beta c q^2}\Delta q
+\end{equation*}
+and calculating energy from partition function
 \subsection*{\footnotesize  Heat and Work}
 \begin{equation}
   \Delta U = Q + W
@@ -147,7 +123,7 @@ At the phase transition you can put heat into system without increasing temperat
 
 \subsection*{\footnotesize  Adiabatic compression}
 So fast no heat flows out, still quasistatic, $\Delta U = W$.
-V^{\gamma}P = \text{constant }, \gamma = (f+2)/f
+$$V^{\gamma}P = \text{constant }, \gamma = (f+2)/f$$
 
 \subsection*{\footnotesize  Two state system}
 Multiplicity of the macrostate with $N$ particles where $N_{\uparrow}$ point up
@@ -158,7 +134,7 @@ Multiplicity of the macrostate with $N$ particles where $N_{\uparrow}$ point up
 \subsection*{\footnotesize  Einstein solid}
 $N/3$ atoms as harmonic oscillators which can oscillate in $3$ dimensions with $q=(U_n-N\hbar\omega/2)/\hbar\omega$ units of energy
 \begin{equation}
-  \Omega(N, q) = \begin{pmatrix} q+N-1 \\ q \end{pmatrix} = \frac{(q+N-1)!}{q! (N-1)!} \approx  \frac{(q+N)!}{q! N!} N_{\downarrow}!}
+  \Omega(N, q) = \begin{pmatrix} q+N-1 \\ q \end{pmatrix} = \frac{(q+N-1)!}{q! (N-1)!} \approx  \frac{(q+N)!}{q! N!} N_{\downarrow}!
 \end{equation}
 If a composite system: $q=q_A+q_B$ and $N=N_a+N_b$ and $\Omega = \Omega_A\Omega_B$.
 \begin{align*}
@@ -166,26 +142,113 @@ If a composite system: $q=q_A+q_B$ and $N=N_a+N_b$ and $\Omega = \Omega_A\Omega_
   \text{high $T$}\qquad \Omega &\approx \left(\frac{qe}{N} \right)^N,  \qquad N << q \\
   S &= kN\left[ \ln{\left( \frac{q}{N} + 1\right)} \right],\quad q = U/\hbar\omega
 \end{align*}
-\subsection*{\footnotesize  Van der Waals Equation}
-Low density gas $PV=NkT$, ignore particle interactions. $\langle v^2 \rangle = 3kT/m$. Compression $W =NkT\ln{V_i/V_f}$.
-
-\subsection*{\footnotesize  Enthalpy}
-In addition to talking about the energy of system we add the work needed to make room for it
-\begin{equation}
-  H = U + PV
-\end{equation}
-Energy needed to create the system out of nothing, and make room for it. $\Delta H = \Delta U + P \Delta V$. $C_P = \left(\pdv{H}{T}\right)_P$
 
 \subsection*{\footnotesize  thermodynamic potentials}
-\begin{equation}
-  \mu = -T\left( \pdv{S}{N} \right)
-\end{equation}
+
+\begin{itemize}
+    \item Internal Energy: $U$    Total thermal energy of the system
+    \item Enthalpy: $H=U+PV$,  $\Delta F \leq W$ (at constant $T$). Energy needed to create the system out of nothing, and make room for it
+    \item Helmholtz free energy: $F=U-TS$,  $\Delta G \leq W_{other}$ (constant pressure). Total energy needed to create the system, minus the heat you get from enviorment. Minimized in thermal bath, with only energy exchange. $\mu=\pdv{F}{N}$, $-S=\pdv{F}{T}$
+    \item  Gibbs free energy: $G=U-TS+PV$, Create system in constant temperature and pressure. Minimized when change in volume with constant pressure. $\mu=\pdv{G}{N}$, $V = \pdv{G}{P}$, $-S=\pdv{G}{T}$
+\end{itemize}
+At constant $U$ and $T$, $S$ increases.\\
+At constant $V$ and $T$, $F$ decreases.\\
+At constant $T$ and $P$, $G$ decreases.\\
+
+\subsection*{\footnotesize  Extensive and Intensive Quantities}
+An extensive quantity doubles when you double a system.\\
+The quantities which are unchanged when you double the system are intensive.
+\begin{itemize}
+    \item \textbf{Extensive:} $V$, $N$, $S$, $U$, $H$, $F$, $G$, mass
+    \item \textbf{Intensive:} $T$, $P$, $\mu$, density
+\end{itemize}
+\begin{align*}
+    \text{extensive} \times \text{intensive} &= \text{extensive} \\
+     \frac{\text{extensive}}{\text{extensive}} &= \text{intensive} \\
+     \text{extensive} \times \text{extensive} &= \text{neither, you did something wrong} \\
+     \text{extensive} + \text{extensive} &= \text{extensive} \\
+     \text{extensive} + \text{intensive} &= \text{not allowed}
+\end{align*}
+
+
+\subsection*{\footnotesize  Van der Waals Equation}
+\begin{align*}
+    \left( P + \frac{aN^2}{V^2}\right)\left(V-Nb\right) = NkT
+\end{align*}
+$Nb$ makes it impossible to compress to zero volume. the $a$ term accounts for short range attractive forces.
+Low density gas $PV=NkT$, ignore particle interactions. $\langle v^2 \rangle = 3kT/m$. Compression $W =NkT\ln{V_i/V_f}$.
+
+\subsection*{\footnotesize Maxwell Construction}
+Makes it possible to find the pressure at the phase transition from the $PV$-diagram, create straight line which makes even areas in the $PV$-line. Gives us the point of phase transition between liquid and gas. Gas at high volume, liquid at low volume. The intersected regions are unstable
 \subsection*{\footnotesize  Tricks}
 \begin{align*}
   \sum_{n}^{N} \frac{N!}{n!(N-n)!}a^Nb^{N-n} &= (a+b)^N \\
   \sum_{n}^{N} n\frac{N!}{n!(N-n)!}a^Nb^{N-n} &= a\pdv{}{a}\sum_{n}^{N} \frac{N!}{n!(N-n)!}a^Nb^{N-n} \\
-  Rp^{R} &= p \pdv{}{p}R^{p}
+  Rp^{R} &= p \pdv{}{p}R^{p} \\
+  \frac{1}{1-x} = 1 + x + x^2 + x^3 +...
 \end{align*}
+
+\subsection*{\footnotesize  Thermodynamic identities}
+\begin{equation}
+    \mbox{d}U = T\mbox{d}S -P\mbox{d}V - \mu\mbox{d}N
+\end{equation}
+
+\subsection*{\footnotesize  Maxwell relations}
+Functions are usually well behavied, so order of differential does not matter, can then use
+\begin{equation*}
+    \pdv{}{V}\left( \pdv{U}{S} \right) = \pdv{}{S}\left( \pdv{U}{V} \right)
+\end{equation*}
+By using thermodynamic identities for d$U$ one can derive the maxwell relations, here they are
+\begin{align*}
+  \pdv{U}{S}{V} \rightarrow \left( \pdv{T}{V} \right)_S &= - \left( \pdv{P}{S} \right)_V \\
+  \pdv{H}{S}{P} \rightarrow \left( \pdv{T}{P} \right)_S &= + \left( \pdv{V}{S} \right)_P \\
+  -\pdv{F}{T}{V} \rightarrow \left( \pdv{S}{V} \right)_T &= + \left( \pdv{P}{T} \right)_V \\
+  \pdv{G}{T}{P} \rightarrow \left( \pdv{S}{P} \right)_T &= - \left( \pdv{V}{T} \right)_P \\
+\end{align*}
+
+\subsection*{\footnotesize  Boltzmann statistics}
+\begin{align*}
+    P_i &= \frac{1}{Z}e^{-E_i/kT}\\
+    Z &= \sum_{i} e^{-E_i/kT}    \\
+    \langle A^n \rangle &= \frac{1}{Z}\sum_{i} A^n e^{-E_i/kT} \\
+    \langle E \rangle &= -\frac{1}{Z}\pdv{Z}{\beta} -\pdv{}{\beta}\ln{Z}\quad \text{equilibrium, reservoir}\\
+    \langle E^2 \rangle &= -\frac{1}{Z}\pdv[2]{Z}{\beta}\quad \text{equilibrium, reservoir}\\
+    U &= N\langle E \rangle  \\
+    F &= -kT\ln{Z} \\
+    Z &= e^{-F/kt} \\
+    Z_{total} &= Z_1Z_2Z_3...Z_N\,\, \text{non-interacting distinguishable}\\
+    Z_{total} &= \frac{Z^N}{N!}\,\, \text{non-interacting indingushable}\\
+\end{align*}
+
+\subsection*{\footnotesize  Maxwell distribution}
+Derived from multiplying the probability of having velocity $v$, and the number of vectors corresponding to velocity $v$. Probability is $e^{-mv^2/2kT}$. Number of vectors corresponding to $v$ is $4\pi v^2$. Find $D(v)$ by normalizing. Find
+\begin{equation*}
+    D(v) = \left(\frac{m}{2\pi k T}\right)^{3/2}4\pi v^2 e^{-mv^2/2kT}
+\end{equation*}
+
+\subsection*{\footnotesize  Quantum Statistics}
+\begin{align*}
+    \text{Gibbs factor} &= e^{-(E(i) - \mu_A(i) N_A(i))/kT} \\
+    \text{Gibbs factor, two particles} &= e^{-(E(i) - \mu_A(i) N_A(i))/kT} \\
+    \text{Grand partition function}\,\, Z &= \sum_i e^{-(E_i - \mu_i N_i)/kT} \\
+    v_Q = l_Q^3 &= \left( \frac{h}{\sqrt{2\pi mkT}} \right)^3 \\
+    \text{condition $Z_t=Z^N/N!$:}\,\,\,\, \frac{V}{N} &>> v_Q
+\end{align*}
+FERMIONS:
+\begin{align*}
+    Z &= 1 + e^{-(\epsilon-\mu)/kT} \\
+    \langle n_{FD} \rangle &= \frac{1}{1+e^{(\epsilon+\mu)/kT}}
+\end{align*}
+BOSONS:
+\begin{align*}
+    Z &= 1 + e^{-(\epsilon-\mu)/kT} + e^{-2(\epsilon-\mu)/kT} + ... \\
+    \langle n_{BE} \rangle &= \frac{1}{1- e^{(\epsilon+\mu)/kT}}
+\end{align*}
+
+\subsection*{\footnotesize  Density of state}
+\begin{equation*}
+    g(\epsilon)\mbox{d}\epsilon = D(n)\mbox{d}n \rightarrow g(\epsilon) = \frac{D(n)}{\dv{\epsilon}{n}}
+\end{equation*}
 
 \subsection*{\footnotesize  Taylor expansions}
 \begin{align*}

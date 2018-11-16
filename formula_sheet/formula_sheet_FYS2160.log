@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.8)  15 NOV 2018 15:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.8)  16 NOV 2018 22:56
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -973,6 +973,8 @@ Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 \symboldsymbols=\mathgroup9
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 207.
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/was/gensymb.sty
+Package: gensymb 2003/07/02 v1.0 (WaS)
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/physics/physics.sty
 Package: physics 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/us
@@ -2085,86 +2087,30 @@ ks.code.tex
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 )))
 
-! LaTeX Error: Command \ket already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24  \newcommand{\ket}[1] { |#1\rangle }
-                                         
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: Command \bra already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.25   \newcommand{\bra}[1] { \langle #1 | }
-                                            
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: Command \braket already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.26 ...nd{\braket}[2] { \langle #1 | #2 \rangle }
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: Command \commutator already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.27 ...d{\commutator}[2]{ \left[ #1 , #2\right] }
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
 LaTeX Warning: Unused global option(s):
     [8pt].
 
 (./formula_sheet_FYS2160.aux)
 \openout1 = `formula_sheet_FYS2160.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 43.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    ... okay on input line 43.
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count187
@@ -2222,94 +2168,71 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
+\symgns@font=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
+(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 43.
+Package gensymb Info: Math companion symbols declared on input line 43.
+LaTeX Info: Redefining \degree on input line 43.
+LaTeX Info: Redefining \celsius on input line 43.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
+erthousand on input line 43.
+LaTeX Info: Redefining \ohm on input line 43.
+Package gensymb Info: Using \textohm for \ohm on input line 43.
+Package gensymb Info: Using \textmu for \micro on input line 43.
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.14} into 
 your preamble.
- on input line 71.
+ on input line 43.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 75.
+LaTeX Font Info:    Try loading font information for U+msa on input line 47.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 75.
+LaTeX Font Info:    Try loading font information for U+msb on input line 47.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+esint on input line 75.
+LaTeX Font Info:    Try loading font information for U+esint on input line 47.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
 )
-! Undefined control sequence.
-l.77 ...emperature of a gram of water by $1\degree
-                                                   C$.)\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.78 Absolute zero: $0$K $=-273.15\degree
-                                          C$.
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--88
+Underfull \hbox (badness 10000) in paragraph at lines 54--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--135
+Underfull \hbox (badness 10000) in paragraph at lines 115--117
 
  []
 
 
-Overfull \hbox (5.3355pt too wide) detected at line 137
+Overfull \hbox (5.3355pt too wide) detected at line 119
 \OML/cmm/m/it/5 C \OT1/cmr/m/n/5 = (^^A\OML/cmm/m/it/5 U \OMS/cmsy/m/n/5 ^^@ \O
 ML/cmm/m/it/5 W\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 =\OT1/cmr/m/n/5 ^^A\OML/cmm/m/it
 /5 T; C[] \OT1/cmr/m/n/5 = [][] \OML/cmm/m/it/5 ; C[] \OT1/cmr/m/n/5 = [][] + \
 OML/cmm/m/it/5 P []
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.144 V^
-        {\gamma}P = \text{constant }, \gamma = (f+2)/f
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.145 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+Underfull \hbox (badness 10000) in paragraph at lines 154--157
 
-! Extra }, or forgotten $.
-l.155 ...ox  \frac{(q+N)!}{q! N!} N_{\downarrow}!}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+ []
+
+
+Overfull \hbox (3.79587pt too wide) in paragraph at lines 189--189
+[] 
+ []
 
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./form
 ula_sheet_FYS2160.aux) ) 
 Here is how much of TeX's memory you used:
- 32784 strings out of 492995
- 768306 string characters out of 6132705
- 954976 words of memory out of 5000000
- 35869 multiletter control sequences out of 15000+600000
+ 32823 strings out of 492995
+ 768907 string characters out of 6132705
+ 977219 words of memory out of 5000000
+ 35904 multiletter control sequences out of 15000+600000
  11788 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,11n,96p,10414b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2327,7 +2250,7 @@ er/sfbx0700.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super
 /sfbx0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/s
 frm0500.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfr
 m1000.pfb>
-Output written on formula_sheet_FYS2160.pdf (1 page, 178719 bytes).
+Output written on formula_sheet_FYS2160.pdf (1 page, 188391 bytes).
 PDF statistics:
  59 PDF objects out of 1000 (max. 8388607)
  44 compressed objects within 1 object stream

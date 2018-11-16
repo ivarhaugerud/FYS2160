@@ -175,6 +175,8 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/tools/multicol.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/tools/multicol.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/tools/bm.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/tools/bm.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/was/gensymb.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/was/gensymb.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/physics/physics.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/physics/physics.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
@@ -286,8 +288,8 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/esint/esint10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib5.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/ecbx0500.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/ecbx0500.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/ecbx0800.tfm
