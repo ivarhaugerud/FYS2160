@@ -148,8 +148,9 @@ If a composite system: $q=q_A+q_B$ and $N=N_a+N_b$ and $\Omega = \Omega_A\Omega_
 \begin{itemize}
     \item Internal Energy: $U$    Total thermal energy of the system
     \item Enthalpy: $H=U+PV$,  $\Delta F \leq W$ (at constant $T$). Energy needed to create the system out of nothing, and make room for it
-    \item Helmholtz free energy: $F=U-TS$,  $\Delta G \leq W_{other}$ (constant pressure). Total energy needed to create the system, minus the heat you get from enviorment. Minimized in thermal bath, with only energy exchange. $\mu=\pdv{F}{N}$, $-S=\pdv{F}{T}$
-    \item  Gibbs free energy: $G=U-TS+PV$, Create system in constant temperature and pressure. Minimized when change in volume with constant pressure. $\mu=\pdv{G}{N}$, $V = \pdv{G}{P}$, $-S=\pdv{G}{T}$
+    \item Helmholtz free energy: $F=U-TS$, (constant pressure). Total energy needed to create the system, minus the heat you get from enviorment. Thermodynamic identity: $\mbox{d}F=-S\mbox{d}T-P\mbox{d}V+\mu\mbox{d}N$. Minimized in thermal bath, with only energy exchange.\\ $\mu=\left( \pdv{F}{N} \right)_{T,V}$, $S=-\left( \pdv{F}{T} \right)_{V, N}$, $P=-\left(\pdv{F}{V})_{T,N}$.
+    \item  Gibbs free energy: $G=U-TS+PV$, $\Delta G \leq W_{other}$. Create system in constant temperature and pressure. Minimized when change in volume with constant pressure. $\mu=\pdv{G}{N}$, $V = \pdv{G}{P}$, $-S=\pdv{G}{T}$
+    \item Chemical potential $\mu=\left(\pdv{G}{N}\right)_{T,P}$. The energy increase by adding a particle in to the system with constant temperature and pressure.
 \end{itemize}
 At constant $U$ and $T$, $S$ increases.\\
 At constant $V$ and $T$, $F$ decreases.\\
@@ -206,53 +207,120 @@ By using thermodynamic identities for d$U$ one can derive the maxwell relations,
   \pdv{G}{T}{P} \rightarrow \left( \pdv{S}{P} \right)_T &= - \left( \pdv{V}{T} \right)_P \\
 \end{align*}
 
-\subsection*{\footnotesize  Boltzmann statistics}
-\begin{align*}
-    P_i &= \frac{1}{Z}e^{-E_i/kT}\\
-    Z &= \sum_{i} e^{-E_i/kT}    \\
-    \langle A^n \rangle &= \frac{1}{Z}\sum_{i} A^n e^{-E_i/kT} \\
-    \langle E \rangle &= -\frac{1}{Z}\pdv{Z}{\beta} -\pdv{}{\beta}\ln{Z}\quad \text{equilibrium, reservoir}\\
-    \langle E^2 \rangle &= -\frac{1}{Z}\pdv[2]{Z}{\beta}\quad \text{equilibrium, reservoir}\\
-    U &= N\langle E \rangle  \\
-    F &= -kT\ln{Z} \\
-    Z &= e^{-F/kt} \\
-    Z_{total} &= Z_1Z_2Z_3...Z_N\,\, \text{non-interacting distinguishable}\\
-    Z_{total} &= \frac{Z^N}{N!}\,\, \text{non-interacting indingushable}\\
-\end{align*}
-
 \subsection*{\footnotesize  Maxwell distribution}
-Derived from multiplying the probability of having velocity $v$, and the number of vectors corresponding to velocity $v$. Probability is $e^{-mv^2/2kT}$. Number of vectors corresponding to $v$ is $4\pi v^2$. Find $D(v)$ by normalizing. Find
+Derived from multiplying the probability of having velocity $v$, and the number of vectors corresponding to velocity $v$. Probability is $e^{-mv^2/2kT}$. Number of vectors corresponding to $v$ is $4\pi v^2$. Find $D(v)$ by normalizing, $\int_{0}^{\infty}\mbox{d}v D^{3D}(v)=1$. get
 \begin{equation*}
     D(v) = \left(\frac{m}{2\pi k T}\right)^{3/2}4\pi v^2 e^{-mv^2/2kT}
 \end{equation*}
 
+
+\subsection*{\footnotesize  Boltzmann statistics}
+\subsubsection*{\scriptsize Thermal Bath}
+Can only exchange energy, system + bath is isolated. Probability for the system to be in a specific microstate at fixed $T$: $P_i = \frac{1}{Z}e^{-E_i/kT}$, with the partition function: $Z = \sum_{i} e^{-E_i/kT}$, counts all accessible microstates weighted by the Boltzmann factor. The partition function determines the thermodynamic potential which is minimized at given $T$, $V$ and $N$. Due to energy exchange with the thermal bath the equilibrium macrostate is an average
+\begin{align*}
+  \langle E \rangle &= -\frac{1}{Z}\pdv{Z}{\beta}  = -\pdv{}{\beta}\ln{Z}\qquad \text{equilibrium, reservoir}\\
+  \langle E^2 \rangle &= -\frac{1}{Z}\pdv[2]{Z}{\beta}\quad \qquad \qquad \qquad \,\text{equilibrium, reservoir}
+\end{align*}
+Boltzmann distribution for the average number of particles (occupation number) in a given energy state
+\begin{equation}
+  \langle N_s \rangle = NP(s) = e^{-\beta(E_s-\mu)}
+\end{equation}
+We also have the following proerties
+\begin{align*}
+    \langle A^n \rangle &= \frac{1}{Z}\sum_{i} A^n e^{-E_i/kT} \\
+    U &= N\langle E \rangle  \\
+    F &= -kT\ln{Z} \\
+    Z &= e^{-F/kt} \\
+    Z_{tot} &= Z_1Z_2...Z_N\,\, \text{distinguishable, identical and independent}\\
+    Z_{tot} &= \frac{Z^N}{N!}\,\, \text{indistinguishable, identical and independent }\\
+\end{align*}
+\subsubsection*{\scriptsize Thermal Bath and particle reservoir}
+System can exchange energy and particles with a reservoir. Equilibrium at a fixed $T$ and $\mu$. Probability of the system in a specific microstate at fixed $T$ and $\mu$
+\begin{equation*}
+  P(s) = \frac{1}{Z_g}e^{-\beta \left( E_s-\mu N_s \right)}, \qquad Z_g = \sum_s e^{-\beta \left(E_s-\mu N_s \right) }
+\end{equation*}
+Can be showed that the probability of the occupation number $N$ of the given state is
+\begin{equation*}
+  P(s) = \frac{e^{-\beta N \left( E_s-\mu  \right)}}{\sum_{N} e^{-\beta N \left( E_s-\mu  \right)}}
+\end{equation*}
+From this one derives the quantum statistics:
 \subsection*{\footnotesize  Quantum Statistics}
 \begin{align*}
-    \text{Gibbs factor} &= e^{-(E(i) - \mu_A(i) N_A(i))/kT} \\
-    \text{Gibbs factor, two particles} &= e^{-(E(i) - \mu_A(i) N_A(i))/kT} \\
-    \text{Grand partition function}\,\, Z &= \sum_i e^{-(E_i - \mu_i N_i)/kT} \\
+    \text{Gibbs factor} &= e^{-(E_s - \mu_{s} N_{s})/kT} \\
+    %\text{Gibbs factor, two particles} &= e^{-(E(i) - \mu_A(i) N_A(i))/kT} \\
+    \text{Grand partition function}\,\, Z &= \sum_s e^{-(E_s - \mu_s N_s)/kT} \\
     v_Q = l_Q^3 &= \left( \frac{h}{\sqrt{2\pi mkT}} \right)^3 \\
-    \text{condition $Z_t=Z^N/N!$:}\,\,\,\, \frac{V}{N} &>> v_Q
+    \text{quantum condition $Z_t=Z^N/N!$:}\,\,\,\, \frac{V}{N} &>> v_Q
 \end{align*}
-FERMIONS:
+\textbf{\textsc{FERMIONS:}}
 \begin{align*}
     Z &= 1 + e^{-(\epsilon-\mu)/kT} \\
-    \langle n_{FD} \rangle &= \frac{1}{1+e^{(\epsilon+\mu)/kT}}
+    \langle n_{FD} \rangle &= \frac{1}{1+e^{(\epsilon-\mu)/kT}}
 \end{align*}
-BOSONS:
+\textbf{\textsc{BOSONS:}}
 \begin{align*}
     Z &= 1 + e^{-(\epsilon-\mu)/kT} + e^{-2(\epsilon-\mu)/kT} + ... \\
-    \langle n_{BE} \rangle &= \frac{1}{1- e^{(\epsilon+\mu)/kT}}
+    \langle n_{BE} \rangle &= \frac{1}{e^{(\epsilon-\mu)/kT}-1}
 \end{align*}
-
-\subsection*{\footnotesize  Density of state}
+The distribution becomes the boltzmann distribution in the high $T$ limit $(\beta \righarrow 0 )$
+\subsubsection*{\scriptsize  Density of state}
+Average energy:
+\begin{equation*}
+  U = \sum_{n_x,n_y,n_z} \langle N(\epsilon) \rangle \epsilon(n) \approx \int_0^{\infty}\mbox{d}n_{x,y,z}\epsilon \langle N \rangle = \int_{0}^{\infty}\mbox{d}\epsilon\,\, g(\epsilon)\cdot \epsilon \cdot \langle N \rangle
+\end{equation*}
+Average number of particles
+\begin{equation*}
+  N(T,V,\mu) = \int_0^{\infty} \mbox{d}\epsilon\,\, g(\epsilon) \langle N \rangle
+\end{equation*}
+Density of state $g(\epsilon)$ to count all the quantum states at a given energy $\epsilon$. The number of states with energy between $\epsilon$ and $\epsilon + \mbox{d}\epsilon = $ Number of states with state number between $n$ and $n+\mbox{d}n$ (positive quadrant). Different for different dimensions
+\begin{equation}
+  \boxed{g(\epsilon) \mbox{d}\epsilon=} \quad(3D) \frac{1}{8}4\pi n^2 \mbox{d}n, \quad(2D) \frac{1}{4}2\pi n \mbox{d}n, \quad(1D)\mbox{d}n
+\end{equation}
+the energy is determined by quantum mechanics
+\begin{itemize}
+  \item particle in a box: $\epsilon(n) = h^2n^2/(8mL^2)$
+  \item harmonic oscillator: $\epsilon(n) = n\hbar\omega$
+  \item relativistic particles: $\epsilon(n) = hf = hcn/(2L)$
+\end{itemize}
 \begin{equation*}
     g(\epsilon)\mbox{d}\epsilon = D(n)\mbox{d}n \rightarrow g(\epsilon) = \frac{D(n)}{\dv{\epsilon}{n}}
 \end{equation*}
+\begin{align*}
+  \epsilon_F(N) &= \epsilon(n_{max}) \\
+  N_{3D} &= 4\pi n_{max}^3/(8\cdot 3), \quad N_{2D} = 2\pi n_{max}^2/4, \quad N_{1D} = 2n_{max}
+  U(T,V,\epsilon_F) = \int_0^{\epsilon_F} \mbox{d}\epsilon \, g(\epsilon)\, \epsilon \\
+  N(T,V,\epsilon_F) = \int_0^{\epsilon_F} \mbox{d}\epsilon \, g(\epsilon) \\
+
+\end{align*}
+For \textbf{\textsc{fermions}} multiply by $2$, spin up and spin down.\\ For \textbf{\textsc{photons}} multiply by $2$, for the two transverse polarization of EM waves.\\
+For \textbf{\textsc{phonons}} multiply by $3$, for all three polarizations of the sound waves.
+
+\subsection*{\footnotesize  Integrals}
+$$ \int_0^{\infty} \frac{x^3}{e^{bx}-1} = \frac{\pi^4}{15b^4}$$
+$$ \int_0^{\infty} \frac{x^3}{e^{bx}+1} = \frac{7\pi^4}{120b^4}$$
 
 \subsection*{\footnotesize  Taylor expansions}
 \begin{align*}
   \ln{1+x} \approx x - x^2/2
+\end{align*}
+
+\subsection*{\footnotesize  Isolated system at equilibrium}
+Multiplicity of a macrostate $\Omega(U,V,N)$ counts all equally likely accessible microstates, if the particles are indistinguishable the total number of microstates is reduced by $N!$. Boltzmann's formula $S=k\ln{\Omega} = -k\sum_{s}P(s)\ln{P(s)}$, for equilibrium state at fixed $U$, entropy is maximized at equilibrium, $\mbox{d}S=0$.
+\begin{equation}
+    T\mbox{d}S = \frac{1}{T}\mbox{d}U  + \frac{P}{T}\mbox{d}V - \frac{\mu}{T}\mbox{d}N
+\end{equation}
+
+\subsection*{\footnotesize Quantum Ideal Gas}
+\begin{align*}
+  \epsilon_n &= \frac{\vec{p}\cdot\vec{p}}{2m}  = \frac{h^2}{8mL^2}\left(n_x^2+n_y^2+n_z^2\right) \\
+  Z_1(T,V) &= \sum_{n_x}\sum_{n_y}\sum_{n_z}e^{\frac{-h^2\left(n_x^2+n_y^2+n_z^2\right)}{8mL^2kT}} = \left( \sum_{n}e^{\frac{-h^2n^2}{8mL^2kT}} \right)^3 \\
+  Z_1(T,V) &\approx_{high T} \frac{1}{2}\int_{-\infty}^{\infty}\mbox{d}n e^{\frac{-h^2n^2}{8mL^2kT}} = \frac{V}{\Lambda^3(T)}, \Lambda = \sqrt{\frac{h}{2\pi mkT}}\\
+  Z_N(T,V) &= \frac{1}{N!}\left(\frac{V}{\Lambda^3(T)}\right)^N \\
+  F_N &= -kT\ln{Z_N(T,V)} = -NkT\left( \ln{\left( \frac{V}{N\Lambda^3(T)}\right)} -1 \right)\\
+  \mu(T,V) &= \left( \pdv{F}{N} \right)_{T,V} = -kT\ln{\left( \frac{V}{N\Lambda^3(T)} \right)} \\
+  P &= -\left( \pdv{F}{V} \right)_{T,N} = \frac{kT}{V}\\
+  U &= -\pdv{}{\beta}\left( \ln{Z_N\left(T, V\right)}\right) = 3NkT/2 \\
+  S &= \frac{U-F}{T} = Nk\left[ \ln{\left( \frac{V}{N\Lambda^3(T)} \right)} + \frac{5}{2} \right]
 \end{align*}
 
 \end{multicols*}

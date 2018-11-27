@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.8)  16 NOV 2018 22:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.8)  27 NOV 2018 11:34
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2214,46 +2214,187 @@ ML/cmm/m/it/5 W\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 =\OT1/cmr/m/n/5 ^^A\OML/cmm/m/it
 OML/cmm/m/it/5 P []
  []
 
+! Missing \right. inserted.
+<inserted text> 
+                \right .
+l.151 ...ht)_{V, N}$, $P=-\left(\pdv{F}{V})_{T,N}$
+                                                  .
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--157
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--158
 
  []
 
 
-Overfull \hbox (3.79587pt too wide) in paragraph at lines 189--189
+Overfull \hbox (3.79587pt too wide) in paragraph at lines 190--190
 [] 
  []
 
+
+Overfull \hbox (3.27106pt too wide) in paragraph at lines 236--236
+[] 
+ []
+
+
+Overfull \hbox (5.07564pt too wide) in paragraph at lines 254--254
+[] 
+ []
+
+! Undefined control sequence.
+l.265 ... in the high $T$ limit $(\beta \righarrow
+                                                   0 )$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (18.35168pt too wide) detected at line 270
+\OML/cmm/m/it/5 U \OT1/cmr/m/n/5 = []\OMS/cmsy/m/n/5 h\OML/cmm/m/it/5 N\OT1/cmr
+/m/n/5 (\OML/cmm/m/it/5 ^^O\OT1/cmr/m/n/5 )\OMS/cmsy/m/n/5 i\OML/cmm/m/it/5 ^^O
+\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 n\OT1/cmr/m/n/5 ) \OMS/cmsy/m/n/5 ^^Y [][] []\O
+ML/cmm/m/it/5 n[]^^O\OMS/cmsy/m/n/5 h\OML/cmm/m/it/5 N\OMS/cmsy/m/n/5 i \OT1/cm
+r/m/n/5 = [][] []\OML/cmm/m/it/5 ^^O  g\OT1/cmr/m/n/5 (\OML/cmm/m/it/5 ^^O\OT1/
+cmr/m/n/5 ) \OMS/cmsy/m/n/5 ^^A \OML/cmm/m/it/5 ^^O \OMS/cmsy/m/n/5 ^^A h\OML/c
+mm/m/it/5 N\OMS/cmsy/m/n/5 i
+ []
+
+Runaway argument?
+ \epsilon _F(N) &= \epsilon (n_{max}) \\ N_{3D} &= 4\pi n_{max}^3/(8\cdot \ETC.
+! Paragraph ended before \align* was complete.
+<to be read again> 
+                   \par 
+l.293 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.293 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.293 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Display math should end with $$.
+<to be read again> 
+                   \def 
+l.293 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Misplaced \cr.
+\math@cr@@@ ->\cr 
+                  
+l.294 \end{align*}
+                  
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
+                                                  {\vskip #1\relax }
+l.294 \end{align*}
+                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \noalign.
+\black@ #1->\noalign 
+                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
+l.294 \end{align*}
+                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Extra }, or forgotten \endgroup.
+\endalign ->\math@cr \black@ \totwidth@ \egroup 
+                                                \ifingather@ \restorealignst...
+l.294 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.294 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.294 \end{align*}
+                  
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
 [1
 
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./form
-ula_sheet_FYS2160.aux) ) 
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (17.36813pt too wide) in paragraph at lines 324--324
+[] 
+ []
+
+[2] (./formula_sheet_FYS2160.aux) ) 
 Here is how much of TeX's memory you used:
- 32823 strings out of 492995
- 768907 string characters out of 6132705
- 977219 words of memory out of 5000000
- 35904 multiletter control sequences out of 15000+600000
- 11788 words of font info for 30 fonts, out of 8000000 for 9000
+ 32825 strings out of 492995
+ 768929 string characters out of 6132705
+ 982219 words of memory out of 5000000
+ 35905 multiletter control sequences out of 15000+600000
+ 12475 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,11n,96p,10414b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-
-super/cm-super-t1.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-su
-per/cm-super-ts1.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/ams
-fonts/cmextra/cmex7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/esint-t
-ype1/esint10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
-s/symbols/msbm5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-s
-uper/sfbx0500.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-sup
-er/sfbx0700.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super
-/sfbx0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/s
-frm0500.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfr
-m1000.pfb>
-Output written on formula_sheet_FYS2160.pdf (1 page, 188391 bytes).
+{/usr/local/texlive/2017/texmf-dist/fonts/en
+c/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/
+dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1
+/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
+lic/esint-type1/esint10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
+lic/amsfonts/symbols/msbm5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
+public/cm-super/sfbx0500.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
+blic/cm-super/sfbx0700.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
+ic/cm-super/sfbx0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
+/cm-super/sfrm0500.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/c
+m-super/sfrm1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-
+super/sfxc0500.pfb>
+Output written on formula_sheet_FYS2160.pdf (2 pages, 224819 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 66 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
