@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.8)  27 NOV 2018 11:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.8)  27 NOV 2018 13:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2202,12 +2202,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--60
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--117
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
 
  []
 
 
-Overfull \hbox (5.3355pt too wide) detected at line 119
+Overfull \hbox (5.3355pt too wide) detected at line 115
 \OML/cmm/m/it/5 C \OT1/cmr/m/n/5 = (^^A\OML/cmm/m/it/5 U \OMS/cmsy/m/n/5 ^^@ \O
 ML/cmm/m/it/5 W\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 =\OT1/cmr/m/n/5 ^^A\OML/cmm/m/it
 /5 T; C[] \OT1/cmr/m/n/5 = [][] \OML/cmm/m/it/5 ; C[] \OT1/cmr/m/n/5 = [][] + \
@@ -2217,7 +2217,7 @@ OML/cmm/m/it/5 P []
 ! Missing \right. inserted.
 <inserted text> 
                 \right .
-l.151 ...ht)_{V, N}$, $P=-\left(\pdv{F}{V})_{T,N}$
+l.147 ...ht)_{V, N}$, $P=-\left(\pdv{F}{V})_{T,N}$
                                                   .
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2226,27 +2226,97 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--158
+Underfull \hbox (badness 10000) in paragraph at lines 151--154
 
  []
 
+! Undefined control sequence.
+l.161 ...nds its equilibrium state $\mbox{d}S \gec
+                                                   0$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Overfull \hbox (3.79587pt too wide) in paragraph at lines 190--190
+! Extra }, or forgotten \right.
+<template> }
+            $}\ifmeasuring@ \savefieldlength@ \fi \set@field \endtemplate 
+l.164 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing \right. inserted.
+<inserted text> 
+                \right .
+l.164 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.164 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra }, or forgotten \right.
+<template> }
+            $}\ifmeasuring@ \savefieldlength@ \fi \set@field \endtemplate 
+l.164 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing \right. inserted.
+<inserted text> 
+                \right .
+l.164 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.164 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (3.27106pt too wide) in paragraph at lines 260--260
 [] 
  []
 
 
-Overfull \hbox (3.27106pt too wide) in paragraph at lines 236--236
-[] 
- []
-
-
-Overfull \hbox (5.07564pt too wide) in paragraph at lines 254--254
+Overfull \hbox (5.07564pt too wide) in paragraph at lines 278--278
 [] 
  []
 
 ! Undefined control sequence.
-l.265 ... in the high $T$ limit $(\beta \righarrow
+l.289 ... in the high $T$ limit $(\beta \righarrow
                                                    0 )$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2255,7 +2325,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (18.35168pt too wide) detected at line 270
+Overfull \hbox (18.35168pt too wide) detected at line 294
 \OML/cmm/m/it/5 U \OT1/cmr/m/n/5 = []\OMS/cmsy/m/n/5 h\OML/cmm/m/it/5 N\OT1/cmr
 /m/n/5 (\OML/cmm/m/it/5 ^^O\OT1/cmr/m/n/5 )\OMS/cmsy/m/n/5 i\OML/cmm/m/it/5 ^^O
 \OT1/cmr/m/n/5 (\OML/cmm/m/it/5 n\OT1/cmr/m/n/5 ) \OMS/cmsy/m/n/5 ^^Y [][] []\O
@@ -2265,12 +2335,15 @@ cmr/m/n/5 ) \OMS/cmsy/m/n/5 ^^A \OML/cmm/m/it/5 ^^O \OMS/cmsy/m/n/5 ^^A h\OML/c
 mm/m/it/5 N\OMS/cmsy/m/n/5 i
  []
 
+[1
+
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Runaway argument?
  \epsilon _F(N) &= \epsilon (n_{max}) \\ N_{3D} &= 4\pi n_{max}^3/(8\cdot \ETC.
 ! Paragraph ended before \align* was complete.
 <to be read again> 
                    \par 
-l.293 
+l.317 
       
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -2279,7 +2352,7 @@ My plan is to forget the whole thing and hope for the best.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.293 
+l.317 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2287,7 +2360,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.293 
+l.317 
       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2298,7 +2371,7 @@ my insertion and my current dilemma will both disappear.
 ! Display math should end with $$.
 <to be read again> 
                    \def 
-l.293 
+l.317 
       
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
@@ -2306,7 +2379,7 @@ So I shall assume that you typed `$$' both times.
 ! Misplaced \cr.
 \math@cr@@@ ->\cr 
                   
-l.294 \end{align*}
+l.318 \end{align*}
                   
 I can't figure out why you would want to use a tab mark
 or \cr or \span just now. If something like a right brace
@@ -2317,7 +2390,7 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced \noalign.
 \math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
                                                   {\vskip #1\relax }
-l.294 \end{align*}
+l.318 \end{align*}
                   
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
@@ -2325,7 +2398,7 @@ an alignment. Proceed, and I'll ignore this case.
 ! Misplaced \noalign.
 \black@ #1->\noalign 
                      {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
-l.294 \end{align*}
+l.318 \end{align*}
                   
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
@@ -2333,7 +2406,7 @@ an alignment. Proceed, and I'll ignore this case.
 ! Extra }, or forgotten \endgroup.
 \endalign ->\math@cr \black@ \totwidth@ \egroup 
                                                 \ifingather@ \restorealignst...
-l.294 \end{align*}
+l.318 \end{align*}
                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -2344,7 +2417,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.294 \end{align*}
+l.318 \end{align*}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2355,15 +2428,18 @@ my insertion and my current dilemma will both disappear.
 ! Display math should end with $$.
 <to be read again> 
                    \endgroup 
-l.294 \end{align*}
+l.318 \end{align*}
                   
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
-[1
 
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (17.36813pt too wide) in paragraph at lines 324--324
+Overfull \hbox (17.36813pt too wide) in paragraph at lines 334--334
+[] 
+ []
+
+
+Overfull \hbox (3.79587pt too wide) in paragraph at lines 352--352
 [] 
  []
 
@@ -2391,7 +2467,7 @@ ic/cm-super/sfbx0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
 /cm-super/sfrm0500.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/c
 m-super/sfrm1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-
 super/sfxc0500.pfb>
-Output written on formula_sheet_FYS2160.pdf (2 pages, 224819 bytes).
+Output written on formula_sheet_FYS2160.pdf (2 pages, 228358 bytes).
 PDF statistics:
  66 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream

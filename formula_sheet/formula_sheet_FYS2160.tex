@@ -62,21 +62,17 @@ Absolute zero: $0$K $=-273.15\degree C$.
 \subsubsection*{\scriptsize Important formulas}
 \begin{align*}
   \Omega_{total}(N, n) = \Omega_A(N, n)\Omega_B(N, n)\\
-  N! \approx N^Ne^{-N}\sqrt{2\pi N} \\
-  \ln{(N!)} \approx N\ln{N}-N \\
-  P = T \left( \pdv{S}{V} \right)_{U, N}
-  \frac{1}{T} = \left( \pdv{S}{U} \right)_{N, V} \quad (\text{isolated system}) \\
-  \text{Clausius} \quad \Delta S \geq \frac{\mbox{d} Q}{T} \rightarrow T\mbox{d} S = \mbox{d}U + p\mbox{d}V \quad \text{reversible}\\
+  %P = T \left( \pdv{S}{V} \right)_{U, N},
+  %\frac{1}{T} = \left( \pdv{S}{U} \right)_{N, V} \quad (\text{isolated system}) \\
+  %\text{Clausius} \quad \Delta S \geq \frac{\mbox{d} Q}{T} \rightarrow T\mbox{d} S = \mbox{d}U + p\mbox{d}V \quad \text{reversible}\\
   C_V \rightarrow 0 \quad \text{as} \quad T \rightarrow 0 \\
   C_V \rightarrow \text{constant} \quad \text{as} \quad T \rightarrow \infty \\
   \Delta S = 0 \quad \rightarrow \quad \text{reversible} \\
   \Delta S \geq 0 \quad \rightarrow \quad \text{irrreversible} \\
-  \pdv{S_A}{V_A} = \pdv{S_B}{V_B} \qquad (\text{at equillibrium}) \\
-  \pdv{S_A}{N_A} = \pdv{S_B}{N_B} \qquad (\text{at equillibrium}) \\
-  \mbox{d}U = T\mbox{d}S - P\mbox{d}V \\
-  \mbox{d}U = T\mbox{d}S - P\mbox{d}V  + \mu \mbox{d}N\\
-  \pdv{F}{N} = \mu \\
-  C_P = \left(\pdv{H}{T}\right)_P
+  %\mbox{d}U = T\mbox{d}S - P\mbox{d}V \\
+  %\mbox{d}U = T\mbox{d}S - P\mbox{d}V  + \mu \mbox{d}N\\
+  %\pdv{F}{N} = \mu \\
+  %C_P = \left(\pdv{H}{T}\right)_P
 \end{align*}
 
 \subsubsection*{\scriptsize Important facts}
@@ -146,7 +142,7 @@ If a composite system: $q=q_A+q_B$ and $N=N_a+N_b$ and $\Omega = \Omega_A\Omega_
 \subsection*{\footnotesize  thermodynamic potentials}
 
 \begin{itemize}
-    \item Internal Energy: $U$    Total thermal energy of the system
+    \item Internal Energy: $U$    Total internal thermal energy of the system. The change in the stored energy equal the sum of «energies in transit»  $\Delta U = Q + W$ (first law of thermodynamic). The infinitesimal change in internal energy: $\mbox{d}U = \delta Q + \delta W$. For infinitesimal reversible process: $\mbox{d}U = T\mbox{d}S - P \mbox{d}V$.
     \item Enthalpy: $H=U+PV$,  $\Delta F \leq W$ (at constant $T$). Energy needed to create the system out of nothing, and make room for it
     \item Helmholtz free energy: $F=U-TS$, (constant pressure). Total energy needed to create the system, minus the heat you get from enviorment. Thermodynamic identity: $\mbox{d}F=-S\mbox{d}T-P\mbox{d}V+\mu\mbox{d}N$. Minimized in thermal bath, with only energy exchange.\\ $\mu=\left( \pdv{F}{N} \right)_{T,V}$, $S=-\left( \pdv{F}{T} \right)_{V, N}$, $P=-\left(\pdv{F}{V})_{T,N}$.
     \item  Gibbs free energy: $G=U-TS+PV$, $\Delta G \leq W_{other}$. Create system in constant temperature and pressure. Minimized when change in volume with constant pressure. $\mu=\pdv{G}{N}$, $V = \pdv{G}{P}$, $-S=\pdv{G}{T}$
@@ -155,6 +151,28 @@ If a composite system: $q=q_A+q_B$ and $N=N_a+N_b$ and $\Omega = \Omega_A\Omega_
 At constant $U$ and $T$, $S$ increases.\\
 At constant $V$ and $T$, $F$ decreases.\\
 At constant $T$ and $P$, $G$ decreases.\\
+
+\subsection*{\footnotesize  Reversible process}
+At every step of the path the system is at equilibrium.\\ For infinitesimal reversible process: $\mbox{d}U = T\mbox{d}S - P \mbox{d}V$.\\
+\textbf{Clausius equality:} $\mbox{d}S = \delta Q_{rev}/T$.\\
+Irreversible	heat	transfer		is	smaller than the reversible	heat
+exchange at	a	given	T
+$$\frac{\delta Q_{irrev}}{T}  < \frac{\delta Q_{rev}}{T} $$
+\textbf{Clausius inequality:} $\mbox{d}S \geq \delta Q/T$. For an isolated system entropy tends to	increase as	the system	sponteneously finds its equilibrium state $\mbox{d}S \gec 0$.
+\begin{align*}
+  C_V = \left( \frac{\delta Q}{\mbox{d}})_V = \left( \pdv{U}{T} \right) \rightarrow \mbox{d}U = C_V \mbox{d}T
+\end{align*}
+
+\subsection*{\footnotesize  Isolated system at equilibrium}
+Multiplicity of a macrostate $\Omega(U,V,N)$ counts all equally likely accessible microstates, if the particles are indistinguishable the total number of microstates is reduced by $N!$. Boltzmann's formula $S=k\ln{\Omega} = -k\sum_{s}P(s)\ln{P(s)}$, for equilibrium state at fixed $U$, entropy is maximized at equilibrium, $\mbox{d}S=0$.
+\begin{equation}
+    T\mbox{d}S = \frac{1}{T}\mbox{d}U  + \frac{P}{T}\mbox{d}V - \frac{\mu}{T}\mbox{d}N
+\end{equation}
+For a composite system
+\begin{align*}
+  \pdv{S_A}{V_A} = \pdv{S_B}{V_B} \qquad (\text{at equillibrium}) \\
+  \pdv{S_A}{N_A} = \pdv{S_B}{N_B} \qquad (\text{at equillibrium})
+\end{align*}
 
 \subsection*{\footnotesize  Extensive and Intensive Quantities}
 An extensive quantity doubles when you double a system.\\
@@ -180,13 +198,19 @@ $Nb$ makes it impossible to compress to zero volume. the $a$ term accounts for s
 Low density gas $PV=NkT$, ignore particle interactions. $\langle v^2 \rangle = 3kT/m$. Compression $W =NkT\ln{V_i/V_f}$.
 
 \subsection*{\footnotesize Maxwell Construction}
-Makes it possible to find the pressure at the phase transition from the $PV$-diagram, create straight line which makes even areas in the $PV$-line. Gives us the point of phase transition between liquid and gas. Gas at high volume, liquid at low volume. The intersected regions are unstable
-\subsection*{\footnotesize  Tricks}
+Makes it possible to find the pressure at the phase transition from the $PV$-diagram, create straight line which makes even areas in the $PV$-line. Gives us the point of phase transition between liquid and gas. Gas at high volume, liquid at low volume. The intersected regions are unstable.\\
+The phase transition happens at constant PRESSURE! We find the pressure on the P-V diagram by the equal areas construction of a given isotherm. Phase transition from liquid to vapor at a constant Gibbs free energy $G(P, T, N)$, $\mbox{d}G_{liquid} = \mbox{d}G_{gas}$.\\
+\textbf{Clausius Clapeyron relation}
+$$-S_l\mbox{d}T + V_l\mbox{d}P = -S_g\mbox{d}T+V_g\mbox{d}P $$
+$$ \frac{\mbox{d}P}{\mbox{d}T} = \frac{S_g-S_l}{V_g-V_l} = \frac{\Delta S}{\Delta V} = \frac{L}{T\Delta V}$$
+Entropy jumps going from a liquid to a gas. Volume expansion going from a liquid to a gas. The Clausius Clapeyron relation tells us how much the phase transition pressure changes with changing temperature.
+
+\subsection*{\footnotesize  Sterlings approximation}
 \begin{align*}
-  \sum_{n}^{N} \frac{N!}{n!(N-n)!}a^Nb^{N-n} &= (a+b)^N \\
-  \sum_{n}^{N} n\frac{N!}{n!(N-n)!}a^Nb^{N-n} &= a\pdv{}{a}\sum_{n}^{N} \frac{N!}{n!(N-n)!}a^Nb^{N-n} \\
-  Rp^{R} &= p \pdv{}{p}R^{p} \\
-  \frac{1}{1-x} = 1 + x + x^2 + x^3 +...
+  N! \approx N^Ne^{-N}\sqrt{2\pi N} \\
+  N! \approx N^Ne^{-N} \\
+  \ln{(N!)} \approx N\ln{N}-N \\
+  \ln{\binom{N}{n}} = \approx N\ln{N}-n\ln{n}-(N-n)\ln{\left(N-n\right)}
 \end{align*}
 
 \subsection*{\footnotesize  Thermodynamic identities}
@@ -292,23 +316,9 @@ the energy is determined by quantum mechanics
   N(T,V,\epsilon_F) = \int_0^{\epsilon_F} \mbox{d}\epsilon \, g(\epsilon) \\
 
 \end{align*}
-For \textbf{\textsc{fermions}} multiply by $2$, spin up and spin down.\\ For \textbf{\textsc{photons}} multiply by $2$, for the two transverse polarization of EM waves.\\
+For \textbf{\textsc{fermions}} multiply by $2$, spin up and spin down.\\
+For \textbf{\textsc{photons}} multiply by $2$, for the two transverse polarization of EM waves, $\mu=0$.\\
 For \textbf{\textsc{phonons}} multiply by $3$, for all three polarizations of the sound waves.
-
-\subsection*{\footnotesize  Integrals}
-$$ \int_0^{\infty} \frac{x^3}{e^{bx}-1} = \frac{\pi^4}{15b^4}$$
-$$ \int_0^{\infty} \frac{x^3}{e^{bx}+1} = \frac{7\pi^4}{120b^4}$$
-
-\subsection*{\footnotesize  Taylor expansions}
-\begin{align*}
-  \ln{1+x} \approx x - x^2/2
-\end{align*}
-
-\subsection*{\footnotesize  Isolated system at equilibrium}
-Multiplicity of a macrostate $\Omega(U,V,N)$ counts all equally likely accessible microstates, if the particles are indistinguishable the total number of microstates is reduced by $N!$. Boltzmann's formula $S=k\ln{\Omega} = -k\sum_{s}P(s)\ln{P(s)}$, for equilibrium state at fixed $U$, entropy is maximized at equilibrium, $\mbox{d}S=0$.
-\begin{equation}
-    T\mbox{d}S = \frac{1}{T}\mbox{d}U  + \frac{P}{T}\mbox{d}V - \frac{\mu}{T}\mbox{d}N
-\end{equation}
 
 \subsection*{\footnotesize Quantum Ideal Gas}
 \begin{align*}
@@ -321,6 +331,24 @@ Multiplicity of a macrostate $\Omega(U,V,N)$ counts all equally likely accessibl
   P &= -\left( \pdv{F}{V} \right)_{T,N} = \frac{kT}{V}\\
   U &= -\pdv{}{\beta}\left( \ln{Z_N\left(T, V\right)}\right) = 3NkT/2 \\
   S &= \frac{U-F}{T} = Nk\left[ \ln{\left( \frac{V}{N\Lambda^3(T)} \right)} + \frac{5}{2} \right]
+\end{align*}
+
+\subsection*{\footnotesize  Integrals}
+$$ \int_0^{\infty} \frac{x^3}{e^{bx}-1} = \frac{\pi^4}{15b^4}$$
+$$ \int_0^{\infty} \frac{x^3}{e^{bx}+1} = \frac{7\pi^4}{120b^4}$$
+
+\subsection*{\footnotesize  Taylor expansions}
+\begin{align*}
+  \ln{1+x} \approx x - x^2/2
+\end{align*}
+
+
+\subsection*{\footnotesize  Tricks}
+\begin{align*}
+  \sum_{n}^{N} \frac{N!}{n!(N-n)!}a^Nb^{N-n} &= (a+b)^N \\
+  \sum_{n}^{N} n\frac{N!}{n!(N-n)!}a^Nb^{N-n} &= a\pdv{}{a}\sum_{n}^{N} \frac{N!}{n!(N-n)!}a^Nb^{N-n} \\
+  Rp^{R} &= p \pdv{}{p}R^{p} \\
+  \frac{1}{1-x} = 1 + x + x^2 + x^3 +...
 \end{align*}
 
 \end{multicols*}
