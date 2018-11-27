@@ -57,6 +57,16 @@ Absolute zero: $0$K $=-273.15\degree C$.
 \textbf{Adiabatic compression:} so fast heat does not escape \\
 \textbf{fundamental assumption of statistical mechanics:} In an isolated system in thermal equilibrium, all accessible microstates are equally probable\\
 \textbf{thermodynamic limit:} Let number of particles go to infinity\\
+\textbf{Adiabat:} Process with constant entropy\\
+
+\subsubsection*{\scriptsize The laws of thermodynamics}
+\begin{enumerate}
+  \setcounter{enumi}{0}
+  \item Defines temperature
+  \item Defines energy $(U)$, and energy transformation $(W, Q)$.
+  \item Defines entropy $S$
+  \item Fixes the value of entropy at $T=0$K.
+\end{enumerate}
 
 
 \subsubsection*{\scriptsize Important formulas}
@@ -99,12 +109,12 @@ Derived by Boltzmannfactors and converting to integral
 \end{equation*}
 and calculating energy from partition function
 \subsection*{\footnotesize  Heat and Work}
-\begin{equation}
+\begin{equation*}
   \Delta U = Q + W
-\end{equation}
+\end{equation*}
 Assuming quasistatic compression $W = -P\delta V$. Use pressure from POV of gas, negative work means gas is doing work, positive work means the outside is doing work on the gas.
 \begin{equation*}
-  W = -\int_{V_i}^{V_f}P(V) \mbox{d} V \text{quasistatic}
+  W = -\int_{V_i}^{V_f}P(V) \mbox{d} V \qquad \qquad \text{quasistatic}
 \end{equation*}
 
 \subsection*{\footnotesize  Heat Capacity}
@@ -123,15 +133,15 @@ $$V^{\gamma}P = \text{constant }, \gamma = (f+2)/f$$
 
 \subsection*{\footnotesize  Two state system}
 Multiplicity of the macrostate with $N$ particles where $N_{\uparrow}$ point up
-\begin{equation}
+\begin{equation*}
   \Omega(N, n) = \frac{N!}{N_{\uparrow}! (N-N_{\uparrow})!} =  \frac{N!}{N_{\uparrow}! N_{\downarrow}!}
-\end{equation}
+\end{equation*}
 
 \subsection*{\footnotesize  Einstein solid}
 $N/3$ atoms as harmonic oscillators which can oscillate in $3$ dimensions with $q=(U_n-N\hbar\omega/2)/\hbar\omega$ units of energy
-\begin{equation}
+\begin{equation*}
   \Omega(N, q) = \begin{pmatrix} q+N-1 \\ q \end{pmatrix} = \frac{(q+N-1)!}{q! (N-1)!} \approx  \frac{(q+N)!}{q! N!} N_{\downarrow}!
-\end{equation}
+\end{equation*}
 If a composite system: $q=q_A+q_B$ and $N=N_a+N_b$ and $\Omega = \Omega_A\Omega_B$.
 \begin{align*}
   \text{ low $T$}\qquad \Omega &\approx \left(\frac{Ne}{q} \right)^q,  \qquad q << N\\
@@ -143,9 +153,13 @@ If a composite system: $q=q_A+q_B$ and $N=N_a+N_b$ and $\Omega = \Omega_A\Omega_
 
 \begin{itemize}
     \item Internal Energy: $U$    Total internal thermal energy of the system. The change in the stored energy equal the sum of «energies in transit»  $\Delta U = Q + W$ (first law of thermodynamic). The infinitesimal change in internal energy: $\mbox{d}U = \delta Q + \delta W$. For infinitesimal reversible process: $\mbox{d}U = T\mbox{d}S - P \mbox{d}V$.
-    \item Enthalpy: $H=U+PV$,  $\Delta F \leq W$ (at constant $T$). Energy needed to create the system out of nothing, and make room for it
-    \item Helmholtz free energy: $F=U-TS$, (constant pressure). Total energy needed to create the system, minus the heat you get from enviorment. Thermodynamic identity: $\mbox{d}F=-S\mbox{d}T-P\mbox{d}V+\mu\mbox{d}N$. Minimized in thermal bath, with only energy exchange.\\ $\mu=\left( \pdv{F}{N} \right)_{T,V}$, $S=-\left( \pdv{F}{T} \right)_{V, N}$, $P=-\left(\pdv{F}{V})_{T,N}$.
-    \item  Gibbs free energy: $G=U-TS+PV$, $\Delta G \leq W_{other}$. Create system in constant temperature and pressure. Minimized when change in volume with constant pressure. $\mu=\pdv{G}{N}$, $V = \pdv{G}{P}$, $-S=\pdv{G}{T}$
+    Can also be $\mbox{d}U = T\mbox{d}S -P\mbox{d}V + \mu\mbox{d}N$.\\
+
+    \item Enthalpy: $H=U+PV$,  $\Delta F \leq W$ (at constant $T$). Energy needed to create the system out of nothing, and make room for it. \\$\mbox{d}H = T\mbox{d}S + V\mbox{d}P +\mu \mbox{d}N$
+
+    \item Helmholtz free energy: $F=U-TS$, (constant pressure). Total energy needed to create the system, minus the heat you get from enviorment. Thermodynamic identity: $\mbox{d}F=-S\mbox{d}T-P\mbox{d}V+\mu\mbox{d}N$. Minimized in thermal bath, with only energy exchange. $\Delta F \leq W$. \\ $\mu=\left( \pdv{F}{N} \right)_{T,V}$, $S=-\left( \pdv{F}{T} \right)_{V, N}$, $P=-\left(\pdv{F}{V}\right)_{T,N}$.
+
+    \item  Gibbs free energy: $G=U-TS+PV$, $\Delta G \leq W_{other}$. Create system in constant temperature and pressure. Minimized when change in volume with constant pressure. $\mbox{d}G = -S\mbox{d}T + V\mbox{d}P +\mu \mbox{d}N$. \\ $\mu=\pdv{G}{N}$, $V = \pdv{G}{P}$, $-S=\pdv{G}{T}$
     \item Chemical potential $\mu=\left(\pdv{G}{N}\right)_{T,P}$. The energy increase by adding a particle in to the system with constant temperature and pressure.
 \end{itemize}
 At constant $U$ and $T$, $S$ increases.\\
@@ -158,18 +172,19 @@ At every step of the path the system is at equilibrium.\\ For infinitesimal reve
 Irreversible	heat	transfer		is	smaller than the reversible	heat
 exchange at	a	given	T
 $$\frac{\delta Q_{irrev}}{T}  < \frac{\delta Q_{rev}}{T} $$
-\textbf{Clausius inequality:} $\mbox{d}S \geq \delta Q/T$. For an isolated system entropy tends to	increase as	the system	sponteneously finds its equilibrium state $\mbox{d}S \gec 0$.
+\textbf{Clausius inequality:} $\mbox{d}S \geq \delta Q/T$. For an isolated system entropy tends to	increase as	the system	sponteneously finds its equilibrium state $\mbox{d}S \geq 0$.
 \begin{align*}
-  C_V = \left( \frac{\delta Q}{\mbox{d}})_V = \left( \pdv{U}{T} \right) \rightarrow \mbox{d}U = C_V \mbox{d}T
+  C_V = \left( \frac{\delta Q}{\mbox{d}T} \right)_V = \left( \pdv{U}{T} \right) \rightarrow \mbox{d}U = C_V \mbox{d}T
 \end{align*}
 
 \subsection*{\footnotesize  Isolated system at equilibrium}
 Multiplicity of a macrostate $\Omega(U,V,N)$ counts all equally likely accessible microstates, if the particles are indistinguishable the total number of microstates is reduced by $N!$. Boltzmann's formula $S=k\ln{\Omega} = -k\sum_{s}P(s)\ln{P(s)}$, for equilibrium state at fixed $U$, entropy is maximized at equilibrium, $\mbox{d}S=0$.
-\begin{equation}
-    T\mbox{d}S = \frac{1}{T}\mbox{d}U  + \frac{P}{T}\mbox{d}V - \frac{\mu}{T}\mbox{d}N
-\end{equation}
+\begin{equation*}
+    \mbox{d}S = \frac{1}{T}\mbox{d}U  + \frac{P}{T}\mbox{d}V - \frac{\mu}{T}\mbox{d}N
+\end{equation*}
 For a composite system
 \begin{align*}
+  \pdv{S_A}{U_A} = \pdv{S_B}{U_B} \qquad (\text{at equillibrium}) \\
   \pdv{S_A}{V_A} = \pdv{S_B}{V_B} \qquad (\text{at equillibrium}) \\
   \pdv{S_A}{N_A} = \pdv{S_B}{N_B} \qquad (\text{at equillibrium})
 \end{align*}
@@ -207,16 +222,12 @@ Entropy jumps going from a liquid to a gas. Volume expansion going from a liquid
 
 \subsection*{\footnotesize  Sterlings approximation}
 \begin{align*}
-  N! \approx N^Ne^{-N}\sqrt{2\pi N} \\
-  N! \approx N^Ne^{-N} \\
-  \ln{(N!)} \approx N\ln{N}-N \\
-  \ln{\binom{N}{n}} = \approx N\ln{N}-n\ln{n}-(N-n)\ln{\left(N-n\right)}
+  N! &\approx N^Ne^{-N}\sqrt{2\pi N} \\
+  N! &\approx N^Ne^{-N} \\
+  \ln{(N!)} &\approx N\ln{N}-N \\
+  \ln{\binom{N}{n}}  &\approx N\ln{N}-n\ln{n}-(N-n)\ln{\left(N-n\right)}
 \end{align*}
 
-\subsection*{\footnotesize  Thermodynamic identities}
-\begin{equation}
-    \mbox{d}U = T\mbox{d}S -P\mbox{d}V - \mu\mbox{d}N
-\end{equation}
 
 \subsection*{\footnotesize  Maxwell relations}
 Functions are usually well behavied, so order of differential does not matter, can then use
@@ -246,18 +257,28 @@ Can only exchange energy, system + bath is isolated. Probability for the system 
   \langle E^2 \rangle &= -\frac{1}{Z}\pdv[2]{Z}{\beta}\quad \qquad \qquad \qquad \,\text{equilibrium, reservoir}
 \end{align*}
 Boltzmann distribution for the average number of particles (occupation number) in a given energy state
-\begin{equation}
+\begin{equation*}
   \langle N_s \rangle = NP(s) = e^{-\beta(E_s-\mu)}
-\end{equation}
+\end{equation*}
 We also have the following proerties
 \begin{align*}
     \langle A^n \rangle &= \frac{1}{Z}\sum_{i} A^n e^{-E_i/kT} \\
     U &= N\langle E \rangle  \\
     F &= -kT\ln{Z} \\
-    Z &= e^{-F/kt} \\
-    Z_{tot} &= Z_1Z_2...Z_N\,\, \text{distinguishable, identical and independent}\\
-    Z_{tot} &= \frac{Z^N}{N!}\,\, \text{indistinguishable, identical and independent }\\
+    Z &= e^{-F/kT} \\
+    S &= \frac{U-F}{T}
 \end{align*}
+\subsubsection*{\scriptsize Many particle partition function}
+\begin{align*}
+  Z_{tot} &= Z_1Z_2...Z_N\,\, \text{distinguishable, identical and independent}\\
+  Z_{tot} &= \frac{Z^N}{N!}\,\, \text{indistinguishable, identical and independent }
+\end{align*}
+If fixed number of particles $a$ and $b$, which do not interact, the partition function
+\begin{equation*}
+  Z_{total} = \binom{N}{N_a}(Z_1^a)^{N_a}(Z_1^b)^{N_b}
+\end{equation*}
+Two systems who are independent and distinguishable
+$$ $$
 \subsubsection*{\scriptsize Thermal Bath and particle reservoir}
 System can exchange energy and particles with a reservoir. Equilibrium at a fixed $T$ and $\mu$. Probability of the system in a specific microstate at fixed $T$ and $\mu$
 \begin{equation*}
@@ -284,7 +305,7 @@ From this one derives the quantum statistics:
 \textbf{\textsc{BOSONS:}}
 \begin{align*}
     Z &= 1 + e^{-(\epsilon-\mu)/kT} + e^{-2(\epsilon-\mu)/kT} + ... \\
-    \langle n_{BE} \rangle &= \frac{1}{e^{(\epsilon-\mu)/kT}-1}
+    \langle n_{be} \rangle &= \frac{1}{e^{(\epsilon-\mu)/kT}-1}
 \end{align*}
 The distribution becomes the boltzmann distribution in the high $T$ limit $(\beta \righarrow 0 )$
 \subsubsection*{\scriptsize  Density of state}
@@ -297,9 +318,9 @@ Average number of particles
   N(T,V,\mu) = \int_0^{\infty} \mbox{d}\epsilon\,\, g(\epsilon) \langle N \rangle
 \end{equation*}
 Density of state $g(\epsilon)$ to count all the quantum states at a given energy $\epsilon$. The number of states with energy between $\epsilon$ and $\epsilon + \mbox{d}\epsilon = $ Number of states with state number between $n$ and $n+\mbox{d}n$ (positive quadrant). Different for different dimensions
-\begin{equation}
+\begin{equation*}
   \boxed{g(\epsilon) \mbox{d}\epsilon=} \quad(3D) \frac{1}{8}4\pi n^2 \mbox{d}n, \quad(2D) \frac{1}{4}2\pi n \mbox{d}n, \quad(1D)\mbox{d}n
-\end{equation}
+\end{equation*}
 the energy is determined by quantum mechanics
 \begin{itemize}
   \item particle in a box: $\epsilon(n) = h^2n^2/(8mL^2)$
@@ -339,7 +360,10 @@ $$ \int_0^{\infty} \frac{x^3}{e^{bx}+1} = \frac{7\pi^4}{120b^4}$$
 
 \subsection*{\footnotesize  Taylor expansions}
 \begin{align*}
-  \ln{1+x} \approx x - x^2/2
+  \ln{1+x} &\approx x - x^2/2 \\
+  \sinh{x} &= \sum_{n_0} \frac{x^{2n+1}}{(2n+1)!} \\
+  \cosh{x} &= \sum_{n_0} \frac{x^{2n}}{2n!}\\
+  \sqrt{1+x} &= 1 + \frac{x}{2} - \frac{x^2}{8}\\
 \end{align*}
 
 
@@ -348,7 +372,7 @@ $$ \int_0^{\infty} \frac{x^3}{e^{bx}+1} = \frac{7\pi^4}{120b^4}$$
   \sum_{n}^{N} \frac{N!}{n!(N-n)!}a^Nb^{N-n} &= (a+b)^N \\
   \sum_{n}^{N} n\frac{N!}{n!(N-n)!}a^Nb^{N-n} &= a\pdv{}{a}\sum_{n}^{N} \frac{N!}{n!(N-n)!}a^Nb^{N-n} \\
   Rp^{R} &= p \pdv{}{p}R^{p} \\
-  \frac{1}{1-x} = 1 + x + x^2 + x^3 +...
+  \frac{1}{1-x} &= 1 + x + x^2 + x^3 +...
 \end{align*}
 
 \end{multicols*}

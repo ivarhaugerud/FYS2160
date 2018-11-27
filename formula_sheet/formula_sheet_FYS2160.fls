@@ -293,9 +293,9 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/ecbx0500.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/ecbx0800.tfm
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/ecxc0500.tfm
 OUTPUT formula_sheet_FYS2160.pdf
 INPUT /usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/ecxc0500.tfm
 INPUT formula_sheet_FYS2160.aux
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
