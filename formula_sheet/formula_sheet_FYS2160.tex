@@ -4,12 +4,16 @@
 \documentclass[a4paper, norsk, 8pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{babel, textcomp, color, amsmath, amssymb, tikz, subfig, float,esint}
+\usepackage{babel, textcomp, color, amssymb, tikz, subfig, float,esint}
 \usepackage{amsfonts}
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{bm}
 \usepackage{gensymb}
+\usepackage{amsmath}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+
 
 \usepackage{physics}
 \usepackage{tikz}
@@ -124,7 +128,9 @@ Assuming quasistatic compression $W = -P\delta V$. Use pressure from POV of gas,
   C = (\Delta U - W)/\Delta T, C_V = \left(\pdv{U}{T}\right)_V, C_P = \left(\pdv{U}{T}\right)_P + P\left( \pdv{V}{T} \right)
 \end{equation*}
 At the phase transition you can put heat into system without increasing temperature, $C=\infty$. Latent heat $L=Q/m$ is the heat needed to accomplish phase transition per mass, assume constant pressure 1atm, and no other work.
-
+\begin{equation*}
+  C_V = T\left( \pdv{S}{T} \right)_V \qquad \qquad   C_P = T\left( \pdv{S}{P} \right)_V
+\end{equation*}
 
 
 \subsection*{\footnotesize  Adiabatic compression}
@@ -278,7 +284,7 @@ If fixed number of particles $a$ and $b$, which do not interact, the partition f
   Z_{total} = \binom{N}{N_a}(Z_1^a)^{N_a}(Z_1^b)^{N_b}
 \end{equation*}
 Two systems who are independent and distinguishable
-$$ $$
+$$Z_{tot} = Z_AZ_B $$
 \subsubsection*{\scriptsize Thermal Bath and particle reservoir}
 System can exchange energy and particles with a reservoir. Equilibrium at a fixed $T$ and $\mu$. Probability of the system in a specific microstate at fixed $T$ and $\mu$
 \begin{equation*}
@@ -363,9 +369,17 @@ $$ \int_0^{\infty} \frac{x^3}{e^{bx}+1} = \frac{7\pi^4}{120b^4}$$
   \ln{1+x} &\approx x - x^2/2 \\
   \sinh{x} &= \sum_{n_0} \frac{x^{2n+1}}{(2n+1)!} \\
   \cosh{x} &= \sum_{n_0} \frac{x^{2n}}{2n!}\\
-  \sqrt{1+x} &= 1 + \frac{x}{2} - \frac{x^2}{8}\\
+  \sqrt{1+x} &= 1 + \frac{x}{2} - \frac{x^2}{8}
 \end{align*}
 
+\subsection*{\footnotesize  Definitions}
+
+\begin{align*}
+  \sinh{x} &= \frac{e^{x}-e^{-x}}{2} \\
+  \cosh{x} &= \frac{e^{x}+e^{-x}}{2} \\
+  \cosh{\left( \arctanh{x} \right)} &= \frac{1}{\sqrt{1-x}} \\
+  \cosh{\left( \arcsinh{x} \right)} &= \sqrt{1+x^2}
+\end{align*}
 
 \subsection*{\footnotesize  Tricks}
 \begin{align*}
