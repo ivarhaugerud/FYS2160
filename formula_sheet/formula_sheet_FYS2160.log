@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.8)  28 NOV 2018 20:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.8)  30 NOV 2018 10:01
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2241,17 +2241,22 @@ LaTeX Font Info:    Try loading font information for U+esint on input line 51.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 58--65
+Underfull \hbox (badness 10000) in paragraph at lines 51--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--127
+Overfull \hbox (10.65948pt too wide) in paragraph at lines 112--112
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--134
 
  []
 
 
-Overfull \hbox (5.3355pt too wide) detected at line 129
+Overfull \hbox (5.3355pt too wide) detected at line 136
 \OML/cmm/m/it/5 C \OT1/cmr/m/n/5 = (^^A\OML/cmm/m/it/5 U \OMS/cmsy/m/n/5 ^^@ \O
 ML/cmm/m/it/5 W\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 =\OT1/cmr/m/n/5 ^^A\OML/cmm/m/it
 /5 T; C[] \OT1/cmr/m/n/5 = [][] \OML/cmm/m/it/5 ; C[] \OT1/cmr/m/n/5 = [][] + \
@@ -2259,39 +2264,29 @@ OML/cmm/m/it/5 P []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--163
+Underfull \hbox (badness 10000) in paragraph at lines 170--172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--174
+Underfull \hbox (badness 10000) in paragraph at lines 183--186
 
  []
 
 
-Overfull \hbox (1.58003pt too wide) in paragraph at lines 281--281
-[] 
- []
-
-
-Overfull \hbox (5.07564pt too wide) in paragraph at lines 305--305
+Overfull \hbox (1.58003pt too wide) in paragraph at lines 293--293
 [] 
  []
 
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-! Undefined control sequence.
-l.316 ... in the high $T$ limit $(\beta \righarrow
-                                                   0 )$
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Overfull \hbox (5.07564pt too wide) in paragraph at lines 317--317
+[] 
+ []
 
 
-Overfull \hbox (18.35168pt too wide) detected at line 321
+Overfull \hbox (18.35168pt too wide) detected at line 335
 \OML/cmm/m/it/5 U \OT1/cmr/m/n/5 = []\OMS/cmsy/m/n/5 h\OML/cmm/m/it/5 N\OT1/cmr
 /m/n/5 (\OML/cmm/m/it/5 ^^O\OT1/cmr/m/n/5 )\OMS/cmsy/m/n/5 i\OML/cmm/m/it/5 ^^O
 \OT1/cmr/m/n/5 (\OML/cmm/m/it/5 n\OT1/cmr/m/n/5 ) \OMS/cmsy/m/n/5 ^^Y [][] []\O
@@ -2301,103 +2296,13 @@ cmr/m/n/5 ) \OMS/cmsy/m/n/5 ^^A \OML/cmm/m/it/5 ^^O \OMS/cmsy/m/n/5 ^^A h\OML/c
 mm/m/it/5 N\OMS/cmsy/m/n/5 i
  []
 
-Runaway argument?
- \epsilon _F(N) &= \epsilon (n_{max}) \\ N_{3D} &= 4\pi n_{max}^3/(8\cdot \ETC.
-! Paragraph ended before \align* was complete.
-<to be read again> 
-                   \par 
-l.344 
-      
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.344 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.344 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \def 
-l.344 
-      
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-! Misplaced \cr.
-\math@cr@@@ ->\cr 
-                  
-l.345 \end{align*}
-                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Misplaced \noalign.
-\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
-                                                  {\vskip #1\relax }
-l.345 \end{align*}
-                  
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Misplaced \noalign.
-\black@ #1->\noalign 
-                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
-l.345 \end{align*}
-                  
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! Extra }, or forgotten \endgroup.
-\endalign ->\math@cr \black@ \totwidth@ \egroup 
-                                                \ifingather@ \restorealignst...
-l.345 \end{align*}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.345 \end{align*}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.345 \end{align*}
-                  
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
+Overfull \hbox (10.86794pt too wide) in paragraph at lines 359--359
+[] 
+ []
 
 
-Overfull \hbox (17.36813pt too wide) in paragraph at lines 361--361
+Overfull \hbox (17.36813pt too wide) in paragraph at lines 418--418
 [] 
  []
 
@@ -2405,7 +2310,7 @@ Overfull \hbox (17.36813pt too wide) in paragraph at lines 361--361
 Here is how much of TeX's memory you used:
  32828 strings out of 492995
  768886 string characters out of 6132705
- 983378 words of memory out of 5000000
+ 982378 words of memory out of 5000000
  35908 multiletter control sequences out of 15000+600000
  12475 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2425,7 +2330,7 @@ ic/cm-super/sfbx0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
 /cm-super/sfrm0500.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/c
 m-super/sfrm1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-
 super/sfxc0500.pfb>
-Output written on formula_sheet_FYS2160.pdf (2 pages, 231842 bytes).
+Output written on formula_sheet_FYS2160.pdf (2 pages, 236505 bytes).
 PDF statistics:
  66 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream

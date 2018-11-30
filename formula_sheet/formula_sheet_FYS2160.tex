@@ -49,19 +49,24 @@
 \begin{multicols*}{3}
 \subsubsection*{\scriptsize Units and Values}
 Avogradro's number: $N_A=6.023\times 10^{23}$ \\
-Boltzmann's cosntant: $k=1.381\times 10^{-23}J/K$,\\ $R = 8.31J/K\text{mol}$, $nR=Nk$.\\
+Boltzmann's cosntant: $k=1.381\times 10^{-23}$ J/K\\
+Boltzmann's cosntant: $k = 8.617 \times 10^{-5}$ eV/K\\
+\\ $R = 8.31J/K\text{mol}$, $nR=Nk$.\\
 Calorie: $1\text{cal} = 4.2$J (amount of heat needed to raise the temperature of a gram of water by $1\degree C$.)\\
-Absolute zero: $0$K $=-273.15\degree C$.
-
+Absolute zero: $0$K $=-273.15\degree C$.\\
+Plank's constant: $6.626\times 10^{-34}$J/s, $4.136\times 10^{-15}$eV/s\\
+One atmosphere pressure: $1$atm $=101.325$kPa.\\
+One atomic mass unit: $1.6605402\times 10^{-27}$kg
 
 \subsubsection*{\scriptsize Definitions}
 \textbf{Isotherm:} constant temperature \\
 \textbf{Isobar:} constant pressure \\
 \textbf{Isothermal compression:} so slow that temperature does not rise \\
-\textbf{Adiabatic compression:} so fast heat does not escape \\
+\textbf{Adiabatic:} so fast heat does not escape ($Q=0$) \\
+\textbf{Quasi static:} Process with constant entropy ($\Delta S = 0$)\\
+\textbf{Isentropic:} Adiabatic ($Q=0$) and quasistatic ($\Delta S = 0$)
 \textbf{fundamental assumption of statistical mechanics:} In an isolated system in thermal equilibrium, all accessible microstates are equally probable\\
-\textbf{thermodynamic limit:} Let number of particles go to infinity\\
-\textbf{Adiabat:} Process with constant entropy\\
+\textbf{thermodynamic limit:} Let number of particles go to infinity
 
 \subsubsection*{\scriptsize The laws of thermodynamics}
 \begin{enumerate}
@@ -79,8 +84,6 @@ Absolute zero: $0$K $=-273.15\degree C$.
   %P = T \left( \pdv{S}{V} \right)_{U, N},
   %\frac{1}{T} = \left( \pdv{S}{U} \right)_{N, V} \quad (\text{isolated system}) \\
   %\text{Clausius} \quad \Delta S \geq \frac{\mbox{d} Q}{T} \rightarrow T\mbox{d} S = \mbox{d}U + p\mbox{d}V \quad \text{reversible}\\
-  C_V \rightarrow 0 \quad \text{as} \quad T \rightarrow 0 \\
-  C_V \rightarrow \text{constant} \quad \text{as} \quad T \rightarrow \infty \\
   \Delta S = 0 \quad \rightarrow \quad \text{reversible} \\
   \Delta S \geq 0 \quad \rightarrow \quad \text{irrreversible} \\
   %\mbox{d}U = T\mbox{d}S - P\mbox{d}V \\
@@ -95,12 +98,16 @@ Absolute zero: $0$K $=-273.15\degree C$.
   \item $\Delta S$ is path independent, choose the simplest path between the states to compute
 \end{itemize}
 
+\subsection*{\footnotesize  Mol}
+For a given substance, find it's atmoic mass, in units of $u$ (hydrogen $1$u, oxygen $16$u, lead $207$u). Then the mole is the mass of the substance in gram (for example $1$g), and divide with the atomic mass (for example $16$u). The substance is then $1/16$mole.
+
+
 \subsection*{\footnotesize  Ideal Gas}
 Low density gas $PV=NkT$, ignore particle interactions. $\langle v^2 \rangle = 3kT/m$. Compression $W =NkT\ln{V_i/V_f}$.
 For indistinhuishable particles (we get $1/N!$)
 \begin{align*}
   \Omega(U, V, N) &= f(N)V^NU^{3N/2} \approx \frac{V^N}{N!(3N/2)!}(2\pi mU/h^2)^{3N/2} \\
-  S &= Nk\left[\ln\left( \frac{V}{N}\left( \frac{4\pi m U}{3Nh^2} \right)^{3/2}  \right) + \frac{5}{2}\right] \\
+  S &= Nk\left[\ln\left( \frac{V}{N}\left( \frac{4\pi m U}{3Nh^2} \right)^{3/2}  \right) + \frac{5}{2}\right] \,\, (\text{Sackur-Tetrode})\\
   \Delta S &= Nk\ln{V_f/V_i} \qquad (\text{$U$, $N$ fixed})
 \end{align*}
 
@@ -128,9 +135,11 @@ Assuming quasistatic compression $W = -P\delta V$. Use pressure from POV of gas,
   C = (\Delta U - W)/\Delta T, C_V = \left(\pdv{U}{T}\right)_V, C_P = \left(\pdv{U}{T}\right)_P + P\left( \pdv{V}{T} \right)
 \end{equation*}
 At the phase transition you can put heat into system without increasing temperature, $C=\infty$. Latent heat $L=Q/m$ is the heat needed to accomplish phase transition per mass, assume constant pressure 1atm, and no other work.
-\begin{equation*}
-  C_V = T\left( \pdv{S}{T} \right)_V \qquad \qquad   C_P = T\left( \pdv{S}{P} \right)_V
-\end{equation*}
+\begin{align*}
+  C_V &= T\left( \pdv{S}{T} \right)_V \qquad \qquad   C_P = T \left( \pdv{S}{P} \right)_V\\
+  C_V &\rightarrow 0 \quad \text{as} \quad T \rightarrow 0 \\
+  C_V &\rightarrow \text{constant} \quad \text{as} \quad T \rightarrow \infty
+\end{align*}
 
 
 \subsection*{\footnotesize  Adiabatic compression}
@@ -165,8 +174,11 @@ If a composite system: $q=q_A+q_B$ and $N=N_a+N_b$ and $\Omega = \Omega_A\Omega_
 
     \item Helmholtz free energy: $F=U-TS$, (constant pressure). Total energy needed to create the system, minus the heat you get from enviorment. Thermodynamic identity: $\mbox{d}F=-S\mbox{d}T-P\mbox{d}V+\mu\mbox{d}N$. Minimized in thermal bath, with only energy exchange. $\Delta F \leq W$. \\ $\mu=\left( \pdv{F}{N} \right)_{T,V}$, $S=-\left( \pdv{F}{T} \right)_{V, N}$, $P=-\left(\pdv{F}{V}\right)_{T,N}$.
 
-    \item  Gibbs free energy: $G=U-TS+PV$, $\Delta G \leq W_{other}$. Create system in constant temperature and pressure. Minimized when change in volume with constant pressure. $\mbox{d}G = -S\mbox{d}T + V\mbox{d}P +\mu \mbox{d}N$. \\ $\mu=\pdv{G}{N}$, $V = \pdv{G}{P}$, $-S=\pdv{G}{T}$
-    \item Chemical potential $\mu=\left(\pdv{G}{N}\right)_{T,P}$. The energy increase by adding a particle in to the system with constant temperature and pressure.
+    \item  Gibbs free energy: $G=U-TS+PV = \mu N$, $\Delta G \leq W_{other}$. Create system in constant temperature and pressure. Minimized when change in volume with constant pressure. $\mbox{d}G = -S\mbox{d}T + V\mbox{d}P +\mu \mbox{d}N$. \\ $\mu=\pdv{G}{N}$, $V = \pdv{G}{P}$, $-S=\pdv{G}{T}$
+    \item Chemical potential, the energy increase by adding a particle in to the system with constant temperature and pressure. Diffusive equilibrium $\rightarrow$ equal chemical potentials.\\
+    $\mu=\left(\pdv{G}{N}\right)_{T,P}, \, \mu=-T\left( \pdv{S}{N} \right)_{U,V}, \,\, \mu=\left( \pdv{U}{N} \right)_{S,V}$\\
+    Particles tend to flow from the system with higher $\mu$ to the system with lower $\mu$.\\
+    For monatomic ideal gas $\mu = -kT \ln{\left( \frac{VZ_{int}}{NV_Q} \right)}$ must be equal
 \end{itemize}
 At constant $U$ and $T$, $S$ increases.\\
 At constant $V$ and $T$, $F$ decreases.\\
@@ -308,21 +320,24 @@ From this one derives the quantum statistics:
     Z &= 1 + e^{-(\epsilon-\mu)/kT} \\
     \langle n_{FD} \rangle &= \frac{1}{1+e^{(\epsilon-\mu)/kT}}
 \end{align*}
+$  \langle n_{FD} \rangle $ is the average occupation number of the given	energy state $\epsilon$ at fixed $T$ and $\mu$.
 \textbf{\textsc{BOSONS:}}
 \begin{align*}
     Z &= 1 + e^{-(\epsilon-\mu)/kT} + e^{-2(\epsilon-\mu)/kT} + ... \\
     \langle n_{be} \rangle &= \frac{1}{e^{(\epsilon-\mu)/kT}-1}
 \end{align*}
-The distribution becomes the boltzmann distribution in the high $T$ limit $(\beta \righarrow 0 )$
+$  \langle n_{BE} \rangle $ is the average occupation number of the given	energy state $\epsilon$ at fixed $T$ and $\mu$.
+The distribution becomes the boltzmann distribution in the limit $\beta\left( \epsilon - \mu \right) \rightarrow \infty $
 \subsubsection*{\scriptsize  Density of state}
 Average energy:
 \begin{equation*}
   U = \sum_{n_x,n_y,n_z} \langle N(\epsilon) \rangle \epsilon(n) \approx \int_0^{\infty}\mbox{d}n_{x,y,z}\epsilon \langle N \rangle = \int_{0}^{\infty}\mbox{d}\epsilon\,\, g(\epsilon)\cdot \epsilon \cdot \langle N \rangle
 \end{equation*}
 Average number of particles
-\begin{equation*}
-  N(T,V,\mu) = \int_0^{\infty} \mbox{d}\epsilon\,\, g(\epsilon) \langle N \rangle
-\end{equation*}
+\begin{gather*}
+  N(T,V,\mu) = \int_0^{\infty} \mbox{d}\epsilon\,\, g(\epsilon) \langle N \rangle \\
+  N = \int_0^{\epsilon_F} g(\epsilon) \mbox{d}\epsilon \qquad (T=0)
+\end{gather*}
 Density of state $g(\epsilon)$ to count all the quantum states at a given energy $\epsilon$. The number of states with energy between $\epsilon$ and $\epsilon + \mbox{d}\epsilon = $ Number of states with state number between $n$ and $n+\mbox{d}n$ (positive quadrant). Different for different dimensions
 \begin{equation*}
   \boxed{g(\epsilon) \mbox{d}\epsilon=} \quad(3D) \frac{1}{8}4\pi n^2 \mbox{d}n, \quad(2D) \frac{1}{4}2\pi n \mbox{d}n, \quad(1D)\mbox{d}n
@@ -336,30 +351,18 @@ the energy is determined by quantum mechanics
 \begin{equation*}
     g(\epsilon)\mbox{d}\epsilon = D(n)\mbox{d}n \rightarrow g(\epsilon) = \frac{D(n)}{\dv{\epsilon}{n}}
 \end{equation*}
-\begin{align*}
-  \epsilon_F(N) &= \epsilon(n_{max}) \\
-  N_{3D} &= 4\pi n_{max}^3/(8\cdot 3), \quad N_{2D} = 2\pi n_{max}^2/4, \quad N_{1D} = 2n_{max}
+\begin{gather*}
+  \epsilon_F(N) = \epsilon(n_{max}) \\
+  N_{3D} = 4\pi n_{max}^3/(8\cdot 3), \quad N_{2D} = 2\pi n_{max}^2/4, \quad N_{1D} = 2n_{max}\\
   U(T,V,\epsilon_F) = \int_0^{\epsilon_F} \mbox{d}\epsilon \, g(\epsilon)\, \epsilon \\
   N(T,V,\epsilon_F) = \int_0^{\epsilon_F} \mbox{d}\epsilon \, g(\epsilon) \\
-
-\end{align*}
+\end{gather*}
 For \textbf{\textsc{fermions}} multiply by $2$, spin up and spin down.\\
 For \textbf{\textsc{photons}} multiply by $2$, for the two transverse polarization of EM waves, $\mu=0$.\\
 For \textbf{\textsc{phonons}} multiply by $3$, for all three polarizations of the sound waves.
 
-\subsection*{\footnotesize Quantum Ideal Gas}
-\begin{align*}
-  \epsilon_n &= \frac{\vec{p}\cdot\vec{p}}{2m}  = \frac{h^2}{8mL^2}\left(n_x^2+n_y^2+n_z^2\right) \\
-  Z_1(T,V) &= \sum_{n_x}\sum_{n_y}\sum_{n_z}e^{\frac{-h^2\left(n_x^2+n_y^2+n_z^2\right)}{8mL^2kT}} = \left( \sum_{n}e^{\frac{-h^2n^2}{8mL^2kT}} \right)^3 \\
-  Z_1(T,V) &\approx_{high T} \frac{1}{2}\int_{-\infty}^{\infty}\mbox{d}n e^{\frac{-h^2n^2}{8mL^2kT}} = \frac{V}{\Lambda^3(T)}, \Lambda = \sqrt{\frac{h}{2\pi mkT}}\\
-  Z_N(T,V) &= \frac{1}{N!}\left(\frac{V}{\Lambda^3(T)}\right)^N \\
-  F_N &= -kT\ln{Z_N(T,V)} = -NkT\left( \ln{\left( \frac{V}{N\Lambda^3(T)}\right)} -1 \right)\\
-  \mu(T,V) &= \left( \pdv{F}{N} \right)_{T,V} = -kT\ln{\left( \frac{V}{N\Lambda^3(T)} \right)} \\
-  P &= -\left( \pdv{F}{V} \right)_{T,N} = \frac{kT}{V}\\
-  U &= -\pdv{}{\beta}\left( \ln{Z_N\left(T, V\right)}\right) = 3NkT/2 \\
-  S &= \frac{U-F}{T} = Nk\left[ \ln{\left( \frac{V}{N\Lambda^3(T)} \right)} + \frac{5}{2} \right]
-\end{align*}
 
+For a fermi gas at $T=0$ all states with $\epsilon < \epsilon_F$ are occupied, while all states with $\epsilon > \epsilon_F$ are unoccupied.
 \subsection*{\footnotesize  Integrals}
 $$ \int_0^{\infty} \frac{x^3}{e^{bx}-1} = \frac{\pi^4}{15b^4}$$
 $$ \int_0^{\infty} \frac{x^3}{e^{bx}+1} = \frac{7\pi^4}{120b^4}$$
@@ -382,11 +385,36 @@ $$ \int_0^{\infty} \frac{x^3}{e^{bx}+1} = \frac{7\pi^4}{120b^4}$$
 \end{align*}
 
 \subsection*{\footnotesize  Tricks}
+\begin{gather*}
+  \sum_{n}^{N} \frac{N!}{n!(N-n)!}a^Nb^{N-n} = (a+b)^N \\
+  \sum_{n}^{N} n\frac{N!}{n!(N-n)!}a^Nb^{N-n} = a\pdv{}{a}\sum_{n}^{N} \frac{N!}{n!(N-n)!}a^Nb^{N-n} \\
+  Rp^{R} = p \pdv{}{p}R^{p} \\
+  \frac{1}{1-x} = 1 + x + x^2 + x^3 +... \\
+  \text{Surface area sphere in d dimensions} = \frac{2\pi^{d/2}}{\left( \frac{d}{2} - 1 \right)!}r^{d-1}\\
+  \sum_{n=0}^{\infty} ne^{-an} = \frac{e^{a}}{\left(e^a-1\right)^2}
+\end{gather*}
+
+\subsection*{\footnotesize  Examples}
+\subsubsection*{\scriptsize Degrees of freedom, H2O}
+3 translational d.o.f.
+Since such a molecule has no symmetry axis, like a diatomic molecule has, there are 3 rotational d.o.f.
+Three possible modes/motions of vibration: two atomic bonds (connecting
+the two H-atoms to the O-atom) which can stretch/contract, and there can
+be a flexing motion where the angle at which the two H-atoms are bound to
+the O-atom increases/decreases (the H-atoms move towards and away from
+each other). For each of these three vibrational modes there are 2 d.o.f. Total $12$.
+
+\subsubsection*{\scriptsize Quantum Ideal Gas}
 \begin{align*}
-  \sum_{n}^{N} \frac{N!}{n!(N-n)!}a^Nb^{N-n} &= (a+b)^N \\
-  \sum_{n}^{N} n\frac{N!}{n!(N-n)!}a^Nb^{N-n} &= a\pdv{}{a}\sum_{n}^{N} \frac{N!}{n!(N-n)!}a^Nb^{N-n} \\
-  Rp^{R} &= p \pdv{}{p}R^{p} \\
-  \frac{1}{1-x} &= 1 + x + x^2 + x^3 +...
+  \epsilon_n &= \frac{\vec{p}\cdot\vec{p}}{2m}  = \frac{h^2}{8mL^2}\left(n_x^2+n_y^2+n_z^2\right) \\
+  Z_1(T,V) &= \sum_{n_x}\sum_{n_y}\sum_{n_z}e^{\frac{-h^2\left(n_x^2+n_y^2+n_z^2\right)}{8mL^2kT}} = \left( \sum_{n}e^{\frac{-h^2n^2}{8mL^2kT}} \right)^3 \\
+  Z_1(T,V) &\approx_{high T} \frac{1}{2}\int_{-\infty}^{\infty}\mbox{d}n e^{\frac{-h^2n^2}{8mL^2kT}} = \frac{V}{\Lambda^3(T)}, \Lambda = \sqrt{\frac{h}{2\pi mkT}}\\
+  Z_N(T,V) &= \frac{1}{N!}\left(\frac{V}{\Lambda^3(T)}\right)^N \\
+  F_N &= -kT\ln{Z_N(T,V)} = -NkT\left( \ln{\left( \frac{V}{N\Lambda^3(T)}\right)} -1 \right)\\
+  \mu(T,V) &= \left( \pdv{F}{N} \right)_{T,V} = -kT\ln{\left( \frac{V}{N\Lambda^3(T)} \right)} \\
+  P &= -\left( \pdv{F}{V} \right)_{T,N} = \frac{kT}{V}\\
+  U &= -\pdv{}{\beta}\left( \ln{Z_N\left(T, V\right)}\right) = 3NkT/2 \\
+  S &= \frac{U-F}{T} = Nk\left[ \ln{\left( \frac{V}{N\Lambda^3(T)} \right)} + \frac{5}{2} \right]
 \end{align*}
 
 \end{multicols*}
