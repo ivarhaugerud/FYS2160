@@ -63,7 +63,7 @@ One atomic mass unit: $1.6605402\times 10^{-27}$kg
 \textbf{Isobar:} constant pressure \\
 \textbf{Isothermal compression:} so slow that temperature does not rise \\
 \textbf{Adiabatic:} so fast heat does not escape ($Q=0$) \\
-\textbf{Quasi static:} Process with constant entropy ($\Delta S = 0$)\\
+\textbf{Quasi static:} Process with constant entropy ($\Delta S = 0$), slow process so that system can always equilibrate to the changing conditions.\\
 \textbf{Isentropic:} Adiabatic ($Q=0$) and quasistatic ($\Delta S = 0$)
 \textbf{fundamental assumption of statistical mechanics:} In an isolated system in thermal equilibrium, all accessible microstates are equally probable\\
 \textbf{thermodynamic limit:} Let number of particles go to infinity
@@ -113,13 +113,15 @@ For indistinhuishable particles (we get $1/N!$)
 
 
 \subsection*{\footnotesize  Equipartition theorem}
-For each quadratic degree of freedom (kinetic $v^2$, spring $k^2$, rotational $\omega^2$, etc.) contributes to $1/2kT$ to the average energy at equillibrium at temperature $T$. For $N$ particles with $f$ degrees of freedom $U = NfkT/2$. Safest to apply in changes of energy. Coutning $f$: one for each dimension, $2$ from rotation (as one axis is symmetric), vibrateing counts twice (frozen out at room temperature) in a solid $3$ vibrational directions $f+=6$. Equipartition theorem only works for kinetic energy in liquids. Use $f=3$ for a monatmoic gas and $f=5$ for a diatomic gas.\\
+For each quadratic degree of freedom (kinetic $v^2$, spring $k^2$, rotational $\omega^2$, etc.) contributes to $1/2kT$ to the average energy at equillibrium at temperature $T$. For $N$ particles with $f$ degrees of freedom $U = NfkT/2$. Safest to apply in changes of energy. Coutning $f$: one for each dimension, $2$ from rotation (as one axis is symmetric), vibrateing counts twice (frozen out at room temperature) in a solid $3$ vibrational directions $f+=6$. Equipartition theorem only works for kinetic energy in liquids. Use $f=3$ for a monatmoic gas and $f=5$ for a diatomic gas, $6$ for polyatomic.\\
 Derived by Boltzmannfactors and converting to integral
 \begin{equation*}
     Z = \frac{1}{\Delta q}\sum_q e^{-\beta c q^2}\Delta q
 \end{equation*}
 and calculating energy from partition function
 \subsection*{\footnotesize  Heat and Work}
+Heat $=$ any spontaneous flow of energy frrom one object to another due to a difference in temperature; konduction, konvection, radiation.\\
+Work $=$ any other transfer of energy inn and out of system. Both refer to energy in transit.
 \begin{equation*}
   \Delta U = Q + W
 \end{equation*}
@@ -135,11 +137,12 @@ Assuming quasistatic compression $W = -P\delta V$. Use pressure from POV of gas,
   C = (\Delta U - W)/\Delta T, C_V = \left(\pdv{U}{T}\right)_V, C_P = \left(\pdv{U}{T}\right)_P + P\left( \pdv{V}{T} \right)
 \end{equation*}
 At the phase transition you can put heat into system without increasing temperature, $C=\infty$. Latent heat $L=Q/m$ is the heat needed to accomplish phase transition per mass, assume constant pressure 1atm, and no other work.
-\begin{align*}
-  C_V &= T\left( \pdv{S}{T} \right)_V \qquad \qquad   C_P = T \left( \pdv{S}{P} \right)_V\\
-  C_V &\rightarrow 0 \quad \text{as} \quad T \rightarrow 0 \\
-  C_V &\rightarrow \text{constant} \quad \text{as} \quad T \rightarrow \infty
-\end{align*}
+\begin{gather*}
+  C_V = T\left( \pdv{S}{T} \right)_V \qquad \qquad   C_P = T \left( \pdv{S}{P} \right)_V\\
+  C_V \rightarrow 0 \quad \text{as} \quad T \rightarrow 0 \\
+  C_V \rightarrow \text{constant} \quad \text{as} \quad T \rightarrow \infty \\
+  \mbox{d}S = \frac{\mbox{d}U}{T} = \frac{Q}{T} = \frac{C_V\mbox{d}T}{T} \rightarrow \Delta S = \int_0^{T_f}\frac{C_V}{T}\mbox{d}T
+\end{gather*}
 
 
 \subsection*{\footnotesize  Adiabatic compression}
@@ -202,9 +205,9 @@ Multiplicity of a macrostate $\Omega(U,V,N)$ counts all equally likely accessibl
 \end{equation*}
 For a composite system
 \begin{align*}
-  \pdv{S_A}{U_A} = \pdv{S_B}{U_B} \qquad (\text{at equillibrium}) \\
-  \pdv{S_A}{V_A} = \pdv{S_B}{V_B} \qquad (\text{at equillibrium}) \\
-  \pdv{S_A}{N_A} = \pdv{S_B}{N_B} \qquad (\text{at equillibrium})
+  \pdv{S_A}{U_A} &= \pdv{S_B}{U_B} \qquad (\text{thermal equilibrium}) \\
+  \pdv{S_A}{V_A} &= \pdv{S_B}{V_B} \qquad (\text{mechanical equilibrium}) \\
+  \pdv{S_A}{N_A} &= \pdv{S_B}{N_B} \qquad (\text{diffusive equillibrium})
 \end{align*}
 
 \subsection*{\footnotesize  Extensive and Intensive Quantities}
@@ -227,12 +230,13 @@ The quantities which are unchanged when you double the system are intensive.
 \begin{align*}
     \left( P + \frac{aN^2}{V^2}\right)\left(V-Nb\right) = NkT
 \end{align*}
-$Nb$ makes it impossible to compress to zero volume. the $a$ term accounts for short range attractive forces.
+$Nb$ makes it impossible to compress to zero volume. The $a$ term accounts for short range attractive forces.
 Low density gas $PV=NkT$, ignore particle interactions. $\langle v^2 \rangle = 3kT/m$. Compression $W =NkT\ln{V_i/V_f}$.
 
-\subsection*{\footnotesize Maxwell Construction}
-Makes it possible to find the pressure at the phase transition from the $PV$-diagram, create straight line which makes even areas in the $PV$-line. Gives us the point of phase transition between liquid and gas. Gas at high volume, liquid at low volume. The intersected regions are unstable.\\
-The phase transition happens at constant PRESSURE! We find the pressure on the P-V diagram by the equal areas construction of a given isotherm. Phase transition from liquid to vapor at a constant Gibbs free energy $G(P, T, N)$, $\mbox{d}G_{liquid} = \mbox{d}G_{gas}$.\\
+\subsection*{\footnotesize Maxwell Construction and phase transition}
+Phase transiton is a discontinous change in the substance properties when the surroundings changes infinitesimaly.
+Makes it possible to find the pressure at the phase transition from the $PV$-diagram, create straight line which makes even areas in the $PV$-line. Gives us the point of phase transition between liquid and gas. Gas at high volume, liquid at low volume. The intersected regions are unstable. The phase transition happens at constant PRESSURE! We find the pressure on the P-V diagram by the equal areas construction of a given isotherm.\\
+Phase transition from liquid to vapor at a constant Gibbs free energy $G(P, T, N)$, since the entropy effects the temperature dependence of the Gibbs, and the pressure effects the volume dependence of the gibbs, this connects the gibbs free energies $\mbox{d}G_{liquid} = \mbox{d}G_{gas}$.\\
 \textbf{Clausius Clapeyron relation}
 $$-S_l\mbox{d}T + V_l\mbox{d}P = -S_g\mbox{d}T+V_g\mbox{d}P $$
 $$ \frac{\mbox{d}P}{\mbox{d}T} = \frac{S_g-S_l}{V_g-V_l} = \frac{\Delta S}{\Delta V} = \frac{L}{T\Delta V}$$
@@ -302,32 +306,36 @@ System can exchange energy and particles with a reservoir. Equilibrium at a fixe
 \begin{equation*}
   P(s) = \frac{1}{Z_g}e^{-\beta \left( E_s-\mu N_s \right)}, \qquad Z_g = \sum_s e^{-\beta \left(E_s-\mu N_s \right) }
 \end{equation*}
-Can be showed that the probability of the occupation number $N$ of the given state is
+Probability of the occupation number $N$ of for given state is
 \begin{equation*}
   P(s) = \frac{e^{-\beta N \left( E_s-\mu  \right)}}{\sum_{N} e^{-\beta N \left( E_s-\mu  \right)}}
 \end{equation*}
 From this one derives the quantum statistics:
 \subsection*{\footnotesize  Quantum Statistics}
-\begin{align*}
-    \text{Gibbs factor} &= e^{-(E_s - \mu_{s} N_{s})/kT} \\
+\begin{gather*}
+    \text{Gibbs factor} = e^{-(E_s - \mu_{s} N_{s})/kT} \\
     %\text{Gibbs factor, two particles} &= e^{-(E(i) - \mu_A(i) N_A(i))/kT} \\
-    \text{Grand partition function}\,\, Z &= \sum_s e^{-(E_s - \mu_s N_s)/kT} \\
-    v_Q = l_Q^3 &= \left( \frac{h}{\sqrt{2\pi mkT}} \right)^3 \\
-    \text{quantum condition $Z_t=Z^N/N!$:}\,\,\,\, \frac{V}{N} &>> v_Q
-\end{align*}
+    \text{Grand partition function}\,\, Z = \sum_s e^{-(E_s - \mu_s N_s)/kT} \\
+    (\text{P of occup num at $\epsilon$, $T$, $\mu$  }) P(N) = \frac{e^{-\beta N(\epsilon - \mu)}}{\sum_{N=0}e^{-\beta N(\epsilon - \mu)}}\\
+    v_Q = l_Q^3 = \left( \frac{h}{\sqrt{2\pi mkT}} \right)^3 \\
+    \text{quantum condition $Z_t=Z^N/N!$:}\,\,\,\, \frac{V}{N} >> v_Q
+\end{gather*}
 \textbf{\textsc{FERMIONS:}}
 \begin{align*}
     Z &= 1 + e^{-(\epsilon-\mu)/kT} \\
-    \langle n_{FD} \rangle &= \frac{1}{1+e^{(\epsilon-\mu)/kT}}
+    P(N) &= \frac{e^{-\beta N(\epsilon-\mu)}}{1+e^{-\beta(\epsilon-\mu)}} \\
+    \langle n_{FD} \rangle &= \sum_{N}P(N)N = \frac{e^{-\beta(\epsilon-\mu)}}{1+e^{-\beta(\epsilon-\mu)}} = \frac{1}{1+e^{(\epsilon-\mu)/kT}}
 \end{align*}
-$  \langle n_{FD} \rangle $ is the average occupation number of the given	energy state $\epsilon$ at fixed $T$ and $\mu$.
+$  \langle n_{FD} \rangle $ is the average occupation number of the given	energy state $\epsilon$ at fixed $T$ and $\mu$.\\
 \textbf{\textsc{BOSONS:}}
-\begin{align*}
-    Z &= 1 + e^{-(\epsilon-\mu)/kT} + e^{-2(\epsilon-\mu)/kT} + ... \\
-    \langle n_{be} \rangle &= \frac{1}{e^{(\epsilon-\mu)/kT}-1}
-\end{align*}
+\begin{gather*}
+    Z = 1 + e^{-(\epsilon-\mu)/kT} + e^{-2(\epsilon-\mu)/kT} + ... = \left(1-e^{-\beta(\epsilon-\mu)}\right)^{-1}\\
+    P(N) = e^{-\beta N(\epsilon-\mu)} \left(1-e^{-\beta(\epsilon-\mu)}\right) \\
+    \langle n_{be} \rangle = \sum_{N}P(N)N = Z^{-1}\sum_N Ne^{-N\beta(\epsilon-\mu)} = \frac{1}{e^{(\epsilon-\mu)/kT}-1}
+\end{gather*}
 $  \langle n_{BE} \rangle $ is the average occupation number of the given	energy state $\epsilon$ at fixed $T$ and $\mu$.
-The distribution becomes the boltzmann distribution in the limit $\beta\left( \epsilon - \mu \right) \rightarrow \infty $
+The distribution becomes the boltzmann distribution in the limit $\beta\left( \epsilon - \mu \right) \rightarrow \infty $ and $\beta \rightarrow 0$.
+In the limit $T\rightarrow 0$ all states with energy less than $\mu$ will be filled, called degenerate gas, has zeror entropy. \\
 \subsubsection*{\scriptsize  Density of state}
 Average energy:
 \begin{equation*}
@@ -353,6 +361,7 @@ the energy is determined by quantum mechanics
 \end{equation*}
 \begin{gather*}
   \epsilon_F(N) = \epsilon(n_{max}) \\
+  \epsilon_F = \mu \qquad (T=0) \\
   N_{3D} = 4\pi n_{max}^3/(8\cdot 3), \quad N_{2D} = 2\pi n_{max}^2/4, \quad N_{1D} = 2n_{max}\\
   U(T,V,\epsilon_F) = \int_0^{\epsilon_F} \mbox{d}\epsilon \, g(\epsilon)\, \epsilon \\
   N(T,V,\epsilon_F) = \int_0^{\epsilon_F} \mbox{d}\epsilon \, g(\epsilon) \\
@@ -361,8 +370,9 @@ For \textbf{\textsc{fermions}} multiply by $2$, spin up and spin down.\\
 For \textbf{\textsc{photons}} multiply by $2$, for the two transverse polarization of EM waves, $\mu=0$.\\
 For \textbf{\textsc{phonons}} multiply by $3$, for all three polarizations of the sound waves.
 
+For a fermi gas at $T=0$ all states with $\epsilon < \epsilon_F$ are occupied, while all states with $\epsilon > \epsilon_F$ are unoccupied.\\
+If $g(\epsilon)$ is greater above $\epsilon_F$ than below $\epsilon_F \rightarrow$ $\mu$ will decrease as $T$ increases, as the total area has to be the same (since we can not create particles by increasing the temperature).
 
-For a fermi gas at $T=0$ all states with $\epsilon < \epsilon_F$ are occupied, while all states with $\epsilon > \epsilon_F$ are unoccupied.
 \subsection*{\footnotesize  Integrals}
 $$ \int_0^{\infty} \frac{x^3}{e^{bx}-1} = \frac{\pi^4}{15b^4}$$
 $$ \int_0^{\infty} \frac{x^3}{e^{bx}+1} = \frac{7\pi^4}{120b^4}$$
@@ -391,7 +401,8 @@ $$ \int_0^{\infty} \frac{x^3}{e^{bx}+1} = \frac{7\pi^4}{120b^4}$$
   Rp^{R} = p \pdv{}{p}R^{p} \\
   \frac{1}{1-x} = 1 + x + x^2 + x^3 +... \\
   \text{Surface area sphere in d dimensions} = \frac{2\pi^{d/2}}{\left( \frac{d}{2} - 1 \right)!}r^{d-1}\\
-  \sum_{n=0}^{\infty} ne^{-an} = \frac{e^{a}}{\left(e^a-1\right)^2}
+  \sum_{n=0}^{\infty} ne^{-an} = \frac{e^{a}}{\left(e^a-1\right)^2} \\
+  \sum_{n=0}^{\infty} nx^n = \frac{x}{\left( 1-x \right)^2}
 \end{gather*}
 
 \subsection*{\footnotesize  Examples}
@@ -416,6 +427,14 @@ each other). For each of these three vibrational modes there are 2 d.o.f. Total 
   U &= -\pdv{}{\beta}\left( \ln{Z_N\left(T, V\right)}\right) = 3NkT/2 \\
   S &= \frac{U-F}{T} = Nk\left[ \ln{\left( \frac{V}{N\Lambda^3(T)} \right)} + \frac{5}{2} \right]
 \end{align*}
+
+
+\subsubsection*{\scriptsize Reversible processes}
+Use Clausius inequality, and find $Q$, integrate to find change in entropy. Only true for reverislbe processes.\\
+\textbf{Isothermal process:} $T_1=T_2$, $\Delta U = 0$, $W=-NkT\ln{V_2/V_1}$, $\Delta S = Q/T = -W/T$. \\
+\textbf{Isobaric process:} $P_1=P_2$, $\Delta U = C_P \mbox{d}T = T\mbox{d}S - P\mbox{d}V$, $W=-P\left(V_2-V_1\right)$, $\Delta S = \int \delta Q /T = C_P\int \mbox{d}T/T = C_P\ln{T_2/T_1}$. \\
+\textbf{Adiabatic process:} $Q=0$, $\Delta U = C_V\mbox{d}T = -P\mbox{d}V$, put in for ideal gas and integrate $T_2/T_1=(V_1/V_2)^{C_P/C_V-1}$, $W=-\int P \mbox{d}V = C_V(T_2-T_1)$, $\Delta S = 0$. \\
+\textbf{Isochoric process:} $V_1=V_2$, $\Delta U = C_V\mbox{d}T = -T\mbox{d}S$, $W=0$, $\Delta S = \int Q/T = C_V\int \mbox{d}T/T = C_V\ln{T_2/T_1}$. \\
 
 \end{multicols*}
 \end{document}
