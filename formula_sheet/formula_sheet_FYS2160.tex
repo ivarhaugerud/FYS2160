@@ -64,9 +64,11 @@ One atomic mass unit: $1.6605402\times 10^{-27}$kg
 \textbf{Isothermal compression:} so slow that temperature does not rise \\
 \textbf{Adiabatic:} so fast heat does not escape ($Q=0$) \\
 \textbf{Quasi static:} Process with constant entropy ($\Delta S = 0$), slow process so that system can always equilibrate to the changing conditions.\\
-\textbf{Isentropic:} Adiabatic ($Q=0$) and quasistatic ($\Delta S = 0$)
+\textbf{Isentropic:} Adiabatic ($Q=0$) and quasistatic ($\Delta S = Q/T=0$)\\
+\textbf{isochoric:} Constant volume $\Delta V = 0$.
 \textbf{fundamental assumption of statistical mechanics:} In an isolated system in thermal equilibrium, all accessible microstates are equally probable\\
 \textbf{thermodynamic limit:} Let number of particles go to infinity
+$P=T\left( \pdv{S}{V} \right)_{U,N}$, $T^{-1}=\left( \pdv{S}{U} \right)_{N,V}$, $\mu=-T\left( \pdv{S}{N} \right)_{U,V}$
 
 \subsubsection*{\scriptsize The laws of thermodynamics}
 \begin{enumerate}
@@ -129,6 +131,7 @@ Assuming quasistatic compression $W = -P\delta V$. Use pressure from POV of gas,
 \begin{equation*}
   W = -\int_{V_i}^{V_f}P(V) \mbox{d} V \qquad \qquad \text{quasistatic}
 \end{equation*}
+For a quasistatic process $Q = T\mbox{d}S$.
 
 \subsection*{\footnotesize  Heat Capacity}
 \textbf{Heat capacity:} amount of heat needed to raise temperature per degree temperature increase $C=Q/\Delta T$.\\
@@ -148,13 +151,12 @@ At the phase transition you can put heat into system without increasing temperat
 \subsection*{\footnotesize  Adiabatic compression}
 So fast no heat flows out, still quasistatic, $\Delta U = W$.
 $$V^{\gamma}P = \text{constant }, \gamma = (f+2)/f$$
-
+Derived from $\Delta U = W$, from equipartition $\mbox{d}U=fNk/2 \mbox{d}T = -P\mbox{d}V$, plugging in ideal gas law: $f/2 \mbox{d}T/T = -\mbox{d}V/V$.
 \subsection*{\footnotesize  Two state system}
 Multiplicity of the macrostate with $N$ particles where $N_{\uparrow}$ point up
 \begin{equation*}
   \Omega(N, n) = \frac{N!}{N_{\uparrow}! (N-N_{\uparrow})!} =  \frac{N!}{N_{\uparrow}! N_{\downarrow}!}
 \end{equation*}
-
 \subsection*{\footnotesize  Einstein solid}
 $N/3$ atoms as harmonic oscillators which can oscillate in $3$ dimensions with $q=(U_n-N\hbar\omega/2)/\hbar\omega$ units of energy
 \begin{equation*}
@@ -189,7 +191,7 @@ At constant $T$ and $P$, $G$ decreases.\\
 
 \subsection*{\footnotesize  Reversible process}
 At every step of the path the system is at equilibrium.\\ For infinitesimal reversible process: $\mbox{d}U = T\mbox{d}S - P \mbox{d}V$.\\
-\textbf{Clausius equality:} $\mbox{d}S = \delta Q_{rev}/T$.\\
+\textbf{Clausius equality:} $\mbox{d}S = \delta Q_{rev}/T$, constant volume, no work.\\
 Irreversible	heat	transfer		is	smaller than the reversible	heat
 exchange at	a	given	T
 $$\frac{\delta Q_{irrev}}{T}  < \frac{\delta Q_{rev}}{T} $$
@@ -240,7 +242,10 @@ Phase transition from liquid to vapor at a constant Gibbs free energy $G(P, T, N
 \textbf{Clausius Clapeyron relation}
 $$-S_l\mbox{d}T + V_l\mbox{d}P = -S_g\mbox{d}T+V_g\mbox{d}P $$
 $$ \frac{\mbox{d}P}{\mbox{d}T} = \frac{S_g-S_l}{V_g-V_l} = \frac{\Delta S}{\Delta V} = \frac{L}{T\Delta V}$$
-Entropy jumps going from a liquid to a gas. Volume expansion going from a liquid to a gas. The Clausius Clapeyron relation tells us how much the phase transition pressure changes with changing temperature.
+Entropy jumps going from a liquid to a gas. Volume expansion going from a liquid to a gas. The Clausius Clapeyron relation tells us how much the phase transition pressure changes with changing temperature. Derivation: $\mbox{d}G = −S\mbox{d}T +V\mbox{d}P +\mu\mbox{d}N$,
+Along the phase boundary where we at any point have chemical equilibrium between
+substances, the changes $\mbox{d}G$ for solid and gas must be the same for changes $\mbox{d}T$ and $\mbox{d}P$.
+$−S_g\mbox{d}T +V_g\mbox{d}P = −S_s\mbox{d}T +V_s\mbox{d}P$.
 
 \subsection*{\footnotesize  Sterlings approximation}
 \begin{align*}
@@ -336,15 +341,18 @@ $  \langle n_{FD} \rangle $ is the average occupation number of the given	energy
 $  \langle n_{BE} \rangle $ is the average occupation number of the given	energy state $\epsilon$ at fixed $T$ and $\mu$.
 The distribution becomes the boltzmann distribution in the limit $\beta\left( \epsilon - \mu \right) \rightarrow \infty $ and $\beta \rightarrow 0$.
 In the limit $T\rightarrow 0$ all states with energy less than $\mu$ will be filled, called degenerate gas, has zeror entropy. \\
+For quantum statistics to be nessecary $V/N <<v_Q$, same as $kT << \epsilon_F$.
 \subsubsection*{\scriptsize  Density of state}
 Average energy:
-\begin{equation*}
-  U = \sum_{n_x,n_y,n_z} \langle N(\epsilon) \rangle \epsilon(n) \approx \int_0^{\infty}\mbox{d}n_{x,y,z}\epsilon \langle N \rangle = \int_{0}^{\infty}\mbox{d}\epsilon\,\, g(\epsilon)\cdot \epsilon \cdot \langle N \rangle
-\end{equation*}
+\begin{gather*}
+  U = \sum_{n_x,n_y,n_z} \langle N(\epsilon) \rangle \epsilon(n) = \int_{0}^{\infty}\mbox{d}\epsilon\,\, g(\epsilon)\cdot \epsilon \cdot \langle n \rangle \\
+  U = \int_0^{\epsilon_F} \epsilon \,\,g(\epsilon) \mbox{d}\epsilon \qquad (T=0)
+\end{gather*}
 Average number of particles
 \begin{gather*}
-  N(T,V,\mu) = \int_0^{\infty} \mbox{d}\epsilon\,\, g(\epsilon) \langle N \rangle \\
-  N = \int_0^{\epsilon_F} g(\epsilon) \mbox{d}\epsilon \qquad (T=0)
+  N(T,V,\mu) = \int_0^{\infty} \mbox{d}\epsilon\,\, g(\epsilon) \langle n \rangle \\
+  N = \int_0^{\epsilon_F} g(\epsilon) \mbox{d}\epsilon \qquad (T=0)\\
+  N = \sum_{j=0} \langle n(\epsilon_j) \rangle
 \end{gather*}
 Density of state $g(\epsilon)$ to count all the quantum states at a given energy $\epsilon$. The number of states with energy between $\epsilon$ and $\epsilon + \mbox{d}\epsilon = $ Number of states with state number between $n$ and $n+\mbox{d}n$ (positive quadrant). Different for different dimensions
 \begin{equation*}
@@ -372,27 +380,31 @@ For \textbf{\textsc{phonons}} multiply by $3$, for all three polarizations of th
 
 For a fermi gas at $T=0$ all states with $\epsilon < \epsilon_F$ are occupied, while all states with $\epsilon > \epsilon_F$ are unoccupied.\\
 If $g(\epsilon)$ is greater above $\epsilon_F$ than below $\epsilon_F \rightarrow$ $\mu$ will decrease as $T$ increases, as the total area has to be the same (since we can not create particles by increasing the temperature).
+If $g(\epsilon)$ increases with $\epsilon$ while $\langle n_{FD}(\epsilon) \rangle$ is symmetric about $\mu$, leading to an increasing number $N(T)$ if $\mu$ is held fixed.
 
 \subsection*{\footnotesize  Integrals}
 $$ \int_0^{\infty} \frac{x^3}{e^{bx}-1} = \frac{\pi^4}{15b^4}$$
 $$ \int_0^{\infty} \frac{x^3}{e^{bx}+1} = \frac{7\pi^4}{120b^4}$$
+$$ \int_0^{\infty} x^n e^{-x/a} \mbox{d}x = n! a^{n+1}$$
 
 \subsection*{\footnotesize  Taylor expansions}
 \begin{align*}
   \ln{1+x} &\approx x - x^2/2 \\
   \sinh{x} &= \sum_{n_0} \frac{x^{2n+1}}{(2n+1)!} \\
   \cosh{x} &= \sum_{n_0} \frac{x^{2n}}{2n!}\\
+  \tanh{x} &\approx x-x^3/3 + 2x^5/15
   \sqrt{1+x} &= 1 + \frac{x}{2} - \frac{x^2}{8}
 \end{align*}
 
 \subsection*{\footnotesize  Definitions}
 
-\begin{align*}
-  \sinh{x} &= \frac{e^{x}-e^{-x}}{2} \\
-  \cosh{x} &= \frac{e^{x}+e^{-x}}{2} \\
-  \cosh{\left( \arctanh{x} \right)} &= \frac{1}{\sqrt{1-x}} \\
-  \cosh{\left( \arcsinh{x} \right)} &= \sqrt{1+x^2}
-\end{align*}
+\begin{gather*}
+  \sinh{x} = \frac{e^{x}-e^{-x}}{2} \\
+  \cosh{x} = \frac{e^{x}+e^{-x}}{2} \\
+  \cosh{\left( \arctanh{x} \right)} = \frac{1}{\sqrt{1-x}} \\
+  \cosh{\left( \arcsinh{x} \right)} = \sqrt{1+x^2} \\
+  \pdv{}{x}\left( \cosh{x} \right) = \sinh{x} \quad\qquad \pdv{}{x}\left( \sinh{x} \right) = \cosh{x}
+\end{gather*}
 
 \subsection*{\footnotesize  Tricks}
 \begin{gather*}
@@ -435,6 +447,19 @@ Use Clausius inequality, and find $Q$, integrate to find change in entropy. Only
 \textbf{Isobaric process:} $P_1=P_2$, $\Delta U = C_P \mbox{d}T = T\mbox{d}S - P\mbox{d}V$, $W=-P\left(V_2-V_1\right)$, $\Delta S = \int \delta Q /T = C_P\int \mbox{d}T/T = C_P\ln{T_2/T_1}$. \\
 \textbf{Adiabatic process:} $Q=0$, $\Delta U = C_V\mbox{d}T = -P\mbox{d}V$, put in for ideal gas and integrate $T_2/T_1=(V_1/V_2)^{C_P/C_V-1}$, $W=-\int P \mbox{d}V = C_V(T_2-T_1)$, $\Delta S = 0$. \\
 \textbf{Isochoric process:} $V_1=V_2$, $\Delta U = C_V\mbox{d}T = -T\mbox{d}S$, $W=0$, $\Delta S = \int Q/T = C_V\int \mbox{d}T/T = C_V\ln{T_2/T_1}$. \\
+
+\subsubsection*{\scriptsize Planck distribution}
+For photons are bosons with $\mu=0$, means that the number of photons is not conserved, will always
+fluctuate around an equilibrium value minimizing $F$ for given $T$ and $V$. For a photon
+gas in a container, photons are all the time absorbed and re-emitted from the walls, $\epsilon = hcn/(2L)$.
+$$ \frac{U}{V} = \int_0^{\infty} \frac{8\pi\epsilon^3}{(hc)^3(e^{\epsilon/kT}-1)} = \frac{8\pi^5(kT)^4}{15(hc)^3}$$
+$$ C_V(T) =  \frac{32\pi^5k(kT)^3}{15(hc)^3}$$
+$$ S(T) =  \frac{32\pi^5Vk}{45} \left( \frac{kT}{hc} \right)^3 $$
+
+\subsubsection*{\scriptsize Derivation of thermodynamic identity}
+First change the energy with constant volume, than change volume with constant energy. $\Delta S = (\Delta S)_1 + (\Delta S)_2$. Multiply first term with $\mbox{d}U$, second term with $\mbox{d}V$: $\Delta S = (\Delta S/\mbox{d}U)_V\mbox{d}U + (\Delta S/\mbox{d}V)_U\mbox{d}V$, using identities we get $\Delta S = 1/T\mbox{d}U - P\mbox{d}V$.
+
+
 
 \end{multicols*}
 \end{document}
