@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.8)  1 DEC 2018 21:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.9.8)  2 DEC 2018 17:43
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2256,11 +2256,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--139
  []
 
 
-Overfull \hbox (5.3355pt too wide) detected at line 141
+Overfull \hbox (11.08034pt too wide) detected at line 141
 \OML/cmm/m/it/5 C \OT1/cmr/m/n/5 = (^^A\OML/cmm/m/it/5 U \OMS/cmsy/m/n/5 ^^@ \O
 ML/cmm/m/it/5 W\OT1/cmr/m/n/5 )\OML/cmm/m/it/5 =\OT1/cmr/m/n/5 ^^A\OML/cmm/m/it
 /5 T; C[] \OT1/cmr/m/n/5 = [][] \OML/cmm/m/it/5 ; C[] \OT1/cmr/m/n/5 = [][] + \
-OML/cmm/m/it/5 P []
+OML/cmm/m/it/5 P [][]
  []
 
 
@@ -2281,7 +2281,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.245 ...temperature. Derivation: $\mbox{d}G = −
+l.246 ...temperature. Derivation: $\mbox{d}G = −
                                                   S\mbox{d}T +V\mbox{d}P +\m...
 
 Your command was ignored.
@@ -2296,7 +2296,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.248 $−
+l.249 $−
           S_g\mbox{d}T +V_g\mbox{d}P = −S_s\mbox{d}T +V_s\mbox{d}P$.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2310,7 +2310,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.248 $−S_g\mbox{d}T +V_g\mbox{d}P = −
+l.249 $−S_g\mbox{d}T +V_g\mbox{d}P = −
                                           S_s\mbox{d}T +V_s\mbox{d}P$.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2319,27 +2319,27 @@ or  <return>  to continue without it.
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (1.58003pt too wide) in paragraph at lines 302--302
+Overfull \hbox (1.58003pt too wide) in paragraph at lines 307--307
 [] 
  []
 
 
-Overfull \hbox (17.50455pt too wide) in paragraph at lines 340--340
+Overfull \hbox (17.50455pt too wide) in paragraph at lines 345--345
 [] 
  []
 
 
-Overfull \hbox (10.86794pt too wide) in paragraph at lines 376--376
+Overfull \hbox (10.86794pt too wide) in paragraph at lines 381--381
 [] 
  []
 
 
-Overfull \hbox (17.36813pt too wide) in paragraph at lines 441--441
+Overfull \hbox (17.36813pt too wide) in paragraph at lines 446--446
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 445--450
+Underfull \hbox (badness 10000) in paragraph at lines 450--455
 
  []
 
@@ -2347,7 +2347,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 445--450
 Here is how much of TeX's memory you used:
  32829 strings out of 492995
  768892 string characters out of 6132705
- 986378 words of memory out of 5000000
+ 983378 words of memory out of 5000000
  35909 multiletter control sequences out of 15000+600000
  12475 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2367,7 +2367,7 @@ ic/cm-super/sfbx0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
 /cm-super/sfrm0500.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/c
 m-super/sfrm1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-
 super/sfxc0500.pfb>
-Output written on formula_sheet_FYS2160.pdf (2 pages, 243130 bytes).
+Output written on formula_sheet_FYS2160.pdf (2 pages, 243833 bytes).
 PDF statistics:
  66 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream

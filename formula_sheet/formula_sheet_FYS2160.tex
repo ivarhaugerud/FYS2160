@@ -137,11 +137,11 @@ For a quasistatic process $Q = T\mbox{d}S$.
 \textbf{Heat capacity:} amount of heat needed to raise temperature per degree temperature increase $C=Q/\Delta T$.\\
 \textbf{Specific heat capacity:} Heat capacity per unit mass $c=C/m$.\\
 \begin{equation*}
-  C = (\Delta U - W)/\Delta T, C_V = \left(\pdv{U}{T}\right)_V, C_P = \left(\pdv{U}{T}\right)_P + P\left( \pdv{V}{T} \right)
+  C = (\Delta U - W)/\Delta T, C_V = \left(\pdv{U}{T}\right)_V, C_P = \left(\pdv{U}{T}\right)_P + P\left( \pdv{V}{T} \right)_P
 \end{equation*}
 At the phase transition you can put heat into system without increasing temperature, $C=\infty$. Latent heat $L=Q/m$ is the heat needed to accomplish phase transition per mass, assume constant pressure 1atm, and no other work.
 \begin{gather*}
-  C_V = T\left( \pdv{S}{T} \right)_V \qquad \qquad   C_P = T \left( \pdv{S}{P} \right)_V\\
+  C_V = T\left( \pdv{S}{T} \right)_V \qquad \qquad   C_P = T \left( \pdv{S}{T} \right)_P\\
   C_V \rightarrow 0 \quad \text{as} \quad T \rightarrow 0 \\
   C_V \rightarrow \text{constant} \quad \text{as} \quad T \rightarrow \infty \\
   \mbox{d}S = \frac{\mbox{d}U}{T} = \frac{Q}{T} = \frac{C_V\mbox{d}T}{T} \rightarrow \Delta S = \int_0^{T_f}\frac{C_V}{T}\mbox{d}T
@@ -179,7 +179,7 @@ If a composite system: $q=q_A+q_B$ and $N=N_a+N_b$ and $\Omega = \Omega_A\Omega_
 
     \item Helmholtz free energy: $F=U-TS$, (constant pressure). Total energy needed to create the system, minus the heat you get from enviorment. Thermodynamic identity: $\mbox{d}F=-S\mbox{d}T-P\mbox{d}V+\mu\mbox{d}N$. Minimized in thermal bath, with only energy exchange. $\Delta F \leq W$. \\ $\mu=\left( \pdv{F}{N} \right)_{T,V}$, $S=-\left( \pdv{F}{T} \right)_{V, N}$, $P=-\left(\pdv{F}{V}\right)_{T,N}$.
 
-    \item  Gibbs free energy: $G=U-TS+PV = \mu N$, $\Delta G \leq W_{other}$. Create system in constant temperature and pressure. Minimized when change in volume with constant pressure. $\mbox{d}G = -S\mbox{d}T + V\mbox{d}P +\mu \mbox{d}N$. \\ $\mu=\pdv{G}{N}$, $V = \pdv{G}{P}$, $-S=\pdv{G}{T}$
+    \item  Gibbs free energy: $G=U-TS+PV = \mu N$, $\Delta G \leq W_{other}$. Create system in constant temperature and pressure. Minimized when change in volume with constant pressure. $\mbox{d}G = -S\mbox{d}T + V\mbox{d}P +\mu \mbox{d}N$. \\ $\mu=\left(\pdv{G}{N}\right)_{T,P}$, $V = \left(\pdv{G}{P}\right)_{T,N}$, $-S=\left( \pdv{G}{T} \right)_{P,N}$
     \item Chemical potential, the energy increase by adding a particle in to the system with constant temperature and pressure. Diffusive equilibrium $\rightarrow$ equal chemical potentials.\\
     $\mu=\left(\pdv{G}{N}\right)_{T,P}, \, \mu=-T\left( \pdv{S}{N} \right)_{U,V}, \,\, \mu=\left( \pdv{U}{N} \right)_{S,V}$\\
     Particles tend to flow from the system with higher $\mu$ to the system with lower $\mu$.\\
@@ -214,6 +214,7 @@ For a composite system
 
 \subsection*{\footnotesize  Extensive and Intensive Quantities}
 An extensive quantity doubles when you double a system.\\
+All the four thermodynamic potentials U, H, F and G are extensive quantities.
 The quantities which are unchanged when you double the system are intensive.
 \begin{itemize}
     \item \textbf{Extensive:} $V$, $N$, $S$, $U$, $H$, $F$, $G$, mass
@@ -295,12 +296,16 @@ We also have the following proerties
     Z &= e^{-F/kT} \\
     S &= \frac{U-F}{T}
 \end{align*}
+The average occupation number of the given	energy state $\epsilon$ at fixed $T$ and $\mu$ in classical limit, using Boltzmann:
+$$ \langle n_{B} \rangle = \frac{1}{e^{(\epsilon-\mu)/kT}}$$
+Dont have to use quantum statistics if $e^{(\epsilon-\mu)/kT}>>1$, very little chance of two particles occupying same state.
+$$ N = \sum_{j=0}^{\infty} \frac{1}{e^{(\epsilon-\mu)/kT}} = e^{\mu/kT}\sum_{j=0}^{\infty}e^{-\epsilon/kT} =e^{\mu/kT}Z_1 $$
 \subsubsection*{\scriptsize Many particle partition function}
 \begin{align*}
   Z_{tot} &= Z_1Z_2...Z_N\,\, \text{distinguishable, identical and independent}\\
   Z_{tot} &= \frac{Z^N}{N!}\,\, \text{indistinguishable, identical and independent }
 \end{align*}
-If fixed number of particles $a$ and $b$, which do not interact, the partition function
+If fixed number of particles $a$ and $b$, which do not interact, in a solid, the partition function
 \begin{equation*}
   Z_{total} = \binom{N}{N_a}(Z_1^a)^{N_a}(Z_1^b)^{N_b}
 \end{equation*}
@@ -356,7 +361,7 @@ Average number of particles
 \end{gather*}
 Density of state $g(\epsilon)$ to count all the quantum states at a given energy $\epsilon$. The number of states with energy between $\epsilon$ and $\epsilon + \mbox{d}\epsilon = $ Number of states with state number between $n$ and $n+\mbox{d}n$ (positive quadrant). Different for different dimensions
 \begin{equation*}
-  \boxed{g(\epsilon) \mbox{d}\epsilon=} \quad(3D) \frac{1}{8}4\pi n^2 \mbox{d}n, \quad(2D) \frac{1}{4}2\pi n \mbox{d}n, \quad(1D)\mbox{d}n
+  \boxed{g(n) \mbox{d}n=} \quad(3D) \frac{1}{8}4\pi n^2 \mbox{d}n, \quad(2D) \frac{1}{4}2\pi n \mbox{d}n, \quad(1D)\mbox{d}n
 \end{equation*}
 the energy is determined by quantum mechanics
 \begin{itemize}
@@ -388,13 +393,13 @@ $$ \int_0^{\infty} \frac{x^3}{e^{bx}+1} = \frac{7\pi^4}{120b^4}$$
 $$ \int_0^{\infty} x^n e^{-x/a} \mbox{d}x = n! a^{n+1}$$
 
 \subsection*{\footnotesize  Taylor expansions}
-\begin{align*}
-  \ln{1+x} &\approx x - x^2/2 \\
-  \sinh{x} &= \sum_{n_0} \frac{x^{2n+1}}{(2n+1)!} \\
-  \cosh{x} &= \sum_{n_0} \frac{x^{2n}}{2n!}\\
-  \tanh{x} &\approx x-x^3/3 + 2x^5/15
-  \sqrt{1+x} &= 1 + \frac{x}{2} - \frac{x^2}{8}
-\end{align*}
+\begin{gather*}
+  \ln{(1+x)} \approx x - x^2/2 \\
+  \sinh{x} = \sum_{n=0} \frac{x^{2n+1}}{(2n+1)!} \approx x + x^3/3!  \\
+  \cosh{x} = \sum_{n=0} \frac{x^{2n}}{2n!}       \approx 1 + x^2/2!\\
+  \tanh{x} \approx x-x^3/3 + 2x^5/15 \\
+  \sqrt{1+x} = 1 + \frac{x}{2} - \frac{x^2}{8}
+\end{gather*}
 
 \subsection*{\footnotesize  Definitions}
 
